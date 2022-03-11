@@ -35,3 +35,13 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Extra Files
+Guide.md
+sanitymedium/
+# sanitymedium/sanity.json
+# sanitymedium/node_modules
+# sanitymedium/dist
+# sanitymedium/
+# VScode
+.vscode/
