@@ -38,7 +38,7 @@ yarn-error.log*
 
 # Extra Files
 Guide.md
-/sanitymedium/
+/sanitymedium
 # sanitymedium/sanity.json
 # sanitymedium/node_modules
 # sanitymedium/dist

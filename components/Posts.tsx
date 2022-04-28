@@ -7,7 +7,7 @@ export default function Posts(props:any) {
 
   return (
     <div>
-        <div className="grid grid-clos-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
+        <div className="grid grid-clos-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6 bg-gray-100">
 
             {posts.map( (post:any) =>(
 
