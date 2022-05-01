@@ -8,6 +8,11 @@ sanity init
 # Sanity Platform
 https://www.sanity.io/manage/personal/projects
 
+
+# Deployment of sanity
+sanity deploy
+
+
 # Technologies
 `Next.js   Tailwindcss3.0     Typescript        React        Sanity CMS        GROQ`
 
@@ -61,6 +66,3 @@ npm i @sanity/client
 # Get Comment Working
 Create a new Schema ie comment with it's objects and import in to schema.js
 
-
-# Deployment of sanity
-sanity deploy
