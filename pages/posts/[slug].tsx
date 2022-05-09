@@ -39,17 +39,17 @@ export default function SlugPost( props:any) {
     const {register,handleSubmit,formState:{errors}}=useForm<IFormInput>();
 
     const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
-        //console.log(data);
-        // fetch('/api/createComment',{
-        //     method:'POST',
-        //     body: JSON.stringify(data),
-        // }).then(()=>{
-        //     console.log(data)
-        //     setSubmited(true);
-        // }).catch((err)=>{
-        //     console.log(err);
-        //     setSubmited(false);
-        // })
+        console.log(data);
+        fetch('/api/createComment',{
+            method:'POST',
+            body: JSON.stringify(data),
+        }).then(()=>{
+            console.log(data)
+            setSubmited(true);
+        }).catch((err)=>{
+            console.log(err);
+            setSubmited(false);
+        })
     }
 
 
@@ -226,8 +226,8 @@ export async function getStaticPaths() {
     //     }
     //   })
 
-      fallback: true,
       //fallback: true,
+      fallback: false,
     }
   }
 
