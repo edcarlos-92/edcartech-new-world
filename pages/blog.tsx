@@ -35,7 +35,8 @@ export default function Blog(posts:any){
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  //export async function getStaticProps() {
     const posts = await getAllTechTipsPosts();
     //console.log('result :-->> ', posts);
     return {

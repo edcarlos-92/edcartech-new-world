@@ -67,18 +67,12 @@ import {
 
 
   export async function getDetailPosts(slug:any) {
-    //const postPreview = preview && previewData?.post
-    // The slug may be the id of an unpublished post
-    //const isId = Number.isInteger(Number(slug))
-    //const isSamePost = isId ? Number(slug) === postPreview.id : slug === postPreview.slug
-    //const isDraft = isSamePost && postPreview?.status === 'draft'
-    //const isRevision = isSamePost && postPreview?.status === 'publish'
+
     const result = await client.query({
       query: gql
 
       //post(id: "hello-world", idType: SLUG) {
       `
-
       query MyQuery2($id:ID!) {
         post(id: $id, idType: SLUG) {
           author {

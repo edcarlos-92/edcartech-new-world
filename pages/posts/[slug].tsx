@@ -234,7 +234,8 @@ export async function getStaticPaths() {
 
 
  
-export async function getStaticProps({ params }:any) {
+  export async function getServerSideProps({ params }:any) {
+ //export async function getStaticProps({ params }:any) {
 
     console.log('getStaticProps params :-->> ', params);
     console.log('REQUEST PARAM :-->> ', params.slug);
