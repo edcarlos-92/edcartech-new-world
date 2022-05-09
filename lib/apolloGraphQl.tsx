@@ -75,7 +75,61 @@ import {
     //const isRevision = isSamePost && postPreview?.status === 'publish'
     const result = await client.query({
       query: gql
+
+      //post(id: "hello-world", idType: SLUG) {
       `
+
+      query MyQuery2($id:ID!) {
+        post(id: $id, idType: SLUG) {
+          author {
+            node {
+              avatar {
+                url
+              }
+              id
+              name
+              email
+            }
+          }
+          comments {
+            nodes {
+              commentId
+              id
+              content
+              date
+              author {
+                node {
+                  avatar {
+                    url
+                  }
+                  email
+                  id
+                  name
+                }
+              }
+            }
+          }
+          content
+          date
+          featuredImage {
+            node {
+              uri
+              title
+              sourceUrl
+            }
+          }
+          title
+          slug
+        }
+      }
+
+    `,
+      //{
+        variables: { 'id':slug },
+     // }
+  })
+
+  /*
       query MyQuery2($slug:String) {
         posts {
           nodes {
@@ -106,25 +160,17 @@ import {
                 commentId
               }
             }
-
-
-
-
           }
         }
         postBy(slug: $slug) {
           id
         }
       }
-
-    `,
-      //{
-        variables: { slug },
-     // }
-  })
+  
+  */
   
     console.log('dETAIL POST :-->> ', result);
-    return result.data.posts
+    return result.data.post
   }
 
         /*

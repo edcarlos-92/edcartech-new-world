@@ -31,7 +31,8 @@ export default function SlugPost( props:any) {
 
 
     let {post}=props;
-    post = post[0];
+    //post = post[0];
+    console.log(`SlugPost`,post)
     const router = useRouter()
    
     const [submitted, setSubmited] = useState(false);
@@ -235,12 +236,12 @@ export async function getStaticPaths() {
  
 export async function getStaticProps({ params }:any) {
 
-    //console.log('getStaticProps params :-->> ', params);
-    //console.log('REQUEST PARAM :-->> ', params.slug);
+    console.log('getStaticProps params :-->> ', params);
+    console.log('REQUEST PARAM :-->> ', params.slug);
 
     const postResult = await getDetailPosts(params.slug);
     //const post = JSON.stringify(postResult.nodes);
-    const post = postResult.nodes;
+    const post = postResult;//postResult.nodes;
     console.log('RESPONSE NODE :-->> ', post);
 
     return {

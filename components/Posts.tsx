@@ -32,7 +32,7 @@ export default function Posts(props:any) {
                         //src={urlFor(post.mainImage).url()} 
                         src={post.node.featuredImage.node.sourceUrl} 
                         alt="featuredImage" 
-                        />
+                        /> 
                     
                         <div className="flex justify-between p-5 "> {/* bg-white */}
                             <div >
