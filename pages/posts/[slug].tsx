@@ -75,13 +75,6 @@ useEffect(() => {
 
   }, []) 
 
-
-  //const htmlHTest = hljs.highlight(`<h1>Hello World!</h1> </br> <pre><code>${codeSample}</code></pre>`, {language: 'javascript'}).value
-
-
-  //hljs.initHighlightingOnLoad();
-
-
   return (
 
         <main>
