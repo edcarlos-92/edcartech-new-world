@@ -16,5 +16,10 @@
     border: 2px solid #3C575B;
     font-size: large !important;
     line-height: 1.4;
-    padding-left: 5px;    
+    padding-left: 5px;
+}
+
+div.microlight {
+    margin-top: 5px;
+
 }

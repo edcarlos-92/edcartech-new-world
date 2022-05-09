@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           
           <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
       
-          <script src='../lib/microlight.js'></script>
+          <script src='/assets/js/microlight.js'></script>
 
          {/* PWA primary color */}
           {/* <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css" />

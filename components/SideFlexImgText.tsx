@@ -8,7 +8,7 @@ export default function SideFlexImgText(props:any) {
   return (
    
 
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 pt-5">
               <div className="flex-shrink-0">
                 <div className="relative">
                   <img
