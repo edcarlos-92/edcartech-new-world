@@ -27,6 +27,8 @@ git push
 # Rmove from Git online 
 
 git rm -r --cached myFolder
+git rm -r --cached [slug]_sanity.tsx
+
 
 # Switch to Another Repo
 
