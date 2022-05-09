@@ -56,7 +56,7 @@ export default function SlugPost( props:any) {
     // console.log(`In the View Now`,post.title)
     // console.log(`In the View Now`,post.title)
 
-    const onsubmit:SubmitHandler<IFormInput> = async (data)=>{
+    const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
         //console.log(data);
         fetch('/api/createComment',{
             method:'POST',
