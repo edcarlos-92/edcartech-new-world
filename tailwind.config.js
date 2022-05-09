@@ -30,6 +30,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        //trebuchet: ['"Trebuchet MS"'],
+        trebuchet: ['Roboto'],
       },
       colors: {
         'warm-gray': colors.warmGray,
@@ -44,3 +46,16 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 }
+
+/*
+{
+  // Won't work:
+  'sans': ['Exo 2', ...],
+
+  // Add quotes:
+  'sans': ['"Exo 2"', ...],
+
+  // ...or escape the space:
+  'sans': ['Exo\\ 2', ...],
+}
+*/

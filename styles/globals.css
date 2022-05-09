@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 
+body{
+     font-family : "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS";
+}
+
+/* html {
+    font-family: "Trebuchet MS";
+  } */
+
+
 .microlight {
-    font-family : monospace !important;
+    
     /* background-color : #C4E4E8;
     color            : #052C36; */
     /* background-color : #282a36; */

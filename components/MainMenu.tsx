@@ -19,7 +19,7 @@ export default function MainMenu(props:any) {
   // const {theme, setTheme} = useTheme()
 
   return (
-    <div className="relative ">{/* bg-gray-100 overflow-hidden */}
+    <div className="relative font-sans">{/* bg-gray-100 overflow-hidden */}
       {/* <div className="relative pt-6 pb-16 sm:pb-16"> */}
       <div className="relative pt-6 ">
         <Popover >

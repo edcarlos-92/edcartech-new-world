@@ -185,7 +185,7 @@ function classNames(...classes:any) {
 
 export default function Landing() {
   return (
-    <div className="pt-10">{/* bg-white */}
+    <div className="pt-10 font-sans">{/* bg-white */}
      
 
       <main>

@@ -82,9 +82,9 @@ useEffect(() => {
                     /> */}
                     <br />
                 
-                <h1 className="text-3xl mt-10 mb-3" >{post.title}</h1>
+                <h1 className="text-4xl mt-10 mb-5" >{post.title}</h1>
             
-                <span className="text-xl font-light" dangerouslySetInnerHTML={{ __html: formatPost(post)}} />
+                <span className="font-light leading-7" dangerouslySetInnerHTML={{ __html: formatPost(post)}} />
                
                 <SideFlexImgText 
                     srcImg={post.author?.node.avatar.url}  

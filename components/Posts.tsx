@@ -32,12 +32,12 @@ export default function Posts(props:any) {
                         //src={urlFor(post.mainImage).url()} 
                         src={post.node.featuredImage.node.sourceUrl} 
                         alt="featuredImage" 
-                        /> 
+                        />
                     
                         <div className="flex justify-between p-5 "> {/* bg-white */}
                             <div >
-                                <p className="text-md ">{post.node.title}</p>{/* font-bold */}
-                                <h4 className="text-xs font-light" dangerouslySetInnerHTML={{ __html: post.node.excerpt.substring(0, 50) }} />
+                                <p className="font-bold">{post.node.title}</p>{/* font-bold */}
+                                <h4 className="text-sm font-light" dangerouslySetInnerHTML={{ __html: post.node.excerpt.substring(0, 50) }} />
                                 {/* <p className="text-xs">{post.excerpt} by {post.author?.node.name}</p> */}
                                 {/* <p className="text-xs">Post by {post.author?.node.name}</p> */}
                             </div>

@@ -14,7 +14,7 @@ export default function CenterHero(props:any) {
   const {leftTitle,rightTitle,Desc}=props
 
   return (
-    <div className="relative overflow-hidden"> {/* bg-gray-100 */}
+    <div className="relative overflow-hidden font-sans"> {/* bg-gray-100 */}
       <div className="relative pb-6">
         <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-20">
           <div className="text-center">
