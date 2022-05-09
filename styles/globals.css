@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.microlight {
+    font-family : monospace !important;
+    /* background-color : #C4E4E8;
+    color            : #052C36; */
+    /* background-color : #282a36; */
+    /* background-color: #1F2F33; */
+    background-color: #111827;
+    color: #B5F7FF;
+    border-radius:3px;
+    text-shadow: 0px 0px 2px rgba(181, 248, 255, 0.418),0px 0px 2px rgba(181, 248, 255, 0.226);
+    border: 2px solid #3C575B;
+    font-size: large !important;
+    line-height: 1.4;
+    padding-left: 5px;    
+}

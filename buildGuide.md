@@ -7,11 +7,14 @@ sanity init
 
 # Sanity Platform
 https://www.sanity.io/manage/personal/projects
+http://localhost:3333/desk/post
 
 
 # Deployment of sanity
+sanity start
 sanity deploy
 
+https://edsanityblog.sanity.studio/desk/post;431307b3-3a26-4de4-82f1-0cbed4a012cd
 
 # Technologies
 `Next.js   Tailwindcss3.0     Typescript        React        Sanity CMS        GROQ`
