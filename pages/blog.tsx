@@ -8,13 +8,6 @@ import {BlogHeroInfo} from '../utils/appConst'
 import PageHeading from '../components/PageHeading'
 import { getAllTechTipsPosts } from '../lib/apolloGraphQl'
 
-
-import {client} from '../lib/apolloGraphQl'
-import {gql} from "@apollo/client"
-
-
-
-
 interface PostProps{
   //posts:Post[]//Or [Post]
 }

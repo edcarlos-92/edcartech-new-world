@@ -41,22 +41,11 @@ export default function SlugPost( props:any) {
 
     let {post}=props;
     post = post[0];
-    //console.log(`props At Shore`,post)
-    //console.log(`postRe At Shore`,postRe)
-
     const router = useRouter()
    
     const [submitted, setSubmited] = useState(false);
     
     const {register,handleSubmit,formState:{errors}}=useForm<IFormInput>();
-   
-
-    // console.log(`In the View Now`,post.id)
-    // console.log(`In the View Now`,post.author.node.name)
-    // console.log(`In the View Now`,post.date)
-    // console.log(`In the View Now`,post.content)
-    // console.log(`In the View Now`,post.title)
-    // console.log(`In the View Now`,post.title)
 
     const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
         //console.log(data);

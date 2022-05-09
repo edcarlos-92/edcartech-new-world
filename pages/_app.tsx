@@ -20,31 +20,11 @@ import { client } from '../lib/apolloGraphQl'
 function MyApp({ Component, pageProps }: AppProps) {
   return(
     <>
-
-  {/* <PrismicProvider
-        linkResolver={linkResolver}
-        internalLinkComponent={({ href, children, ...props }) => (
-          <Link href={href}>
-            <a {...props}>
-              {children}
-            </a>
-          </Link>
-        )}
-      > */}
-      {/* <PrismicPreview repositoryName={repositoryName}> */}
-
-
-
       <ApolloProvider client={client} >
         <ThemeProvider attribute="class">
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
-
-
-
-      {/* </PrismicPreview> */}
-      {/* </PrismicProvider> */}
     </>
   )
   
