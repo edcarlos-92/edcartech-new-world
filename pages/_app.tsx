@@ -15,7 +15,6 @@ import "../styles/prism-overrides.css";
 
 
 import type { AppProps } from 'next/app'
-import { Html, Main, NextScript } from 'next/document';
 import { client } from '../lib/apolloGraphQl'
 
 function MyApp({ Component, pageProps }: AppProps) {

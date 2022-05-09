@@ -24,7 +24,7 @@ git push
 
 `After every change Remember to Add & commit `
 
-# Rmove from Git online
+# Rmove from Git online 
 
 git rm -r --cached myFolder
 

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { GetStaticProps } from 'next'
 import React, { useEffect, useState ,useRef} from 'react'
 import Header from '../../components/unUsed/Header'
@@ -15,6 +16,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { CopyBlock, dracula } from 'react-code-blocks'
 import formatPost from '../../utils/formatPost'
+import Link from 'next/link'
 
 interface IFormInput{
     _id:string;
