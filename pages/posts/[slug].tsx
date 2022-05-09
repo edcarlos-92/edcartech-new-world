@@ -1,22 +1,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { GetStaticProps } from 'next'
 import React, { useEffect, useState ,useRef} from 'react'
-import Header from '../../components/unUsed/Header'
-import Posts from '../../components/Posts'
 import MainMenu from '../../components/MainMenu'
-import { sanityClient,urlFor } from '../../sanity'
-import { Post } from '../../sanitymedium/typings'
 import {HumanDateTime} from '../../utils'
-import PortableText from 'react-portable-text'
 import { useForm,SubmitHandler } from "react-hook-form";
 import SideFlexImgText from '../../components/SideFlexImgText'
 import { AnnotationIcon } from '@heroicons/react/outline'
 import { getAllPostsWithSlug, getDetailPosts } from '../../lib/apolloGraphQl'
 import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
 import { CopyBlock, dracula } from 'react-code-blocks'
 import formatPost from '../../utils/formatPost'
-import Link from 'next/link'
 
 interface IFormInput{
     _id:string;
@@ -28,7 +20,6 @@ interface IFormInput{
 // interface PostProps{
 //     post:Post
 // }
-
 
 const codeSample = `const [submitted, setSubmited] = useState(false);
 const {post}=props;
