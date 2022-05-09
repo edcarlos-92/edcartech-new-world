@@ -40,16 +40,16 @@ export default function SlugPost( props:any) {
 
     const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
         //console.log(data);
-        fetch('/api/createComment',{
-            method:'POST',
-            body: JSON.stringify(data),
-        }).then(()=>{
-            console.log(data)
-            setSubmited(true);
-        }).catch((err)=>{
-            console.log(err);
-            setSubmited(false);
-        })
+        // fetch('/api/createComment',{
+        //     method:'POST',
+        //     body: JSON.stringify(data),
+        // }).then(()=>{
+        //     console.log(data)
+        //     setSubmited(true);
+        // }).catch((err)=>{
+        //     console.log(err);
+        //     setSubmited(false);
+        // })
     }
 
 
@@ -112,17 +112,17 @@ useEffect(() => {
                     <h4 className="text-3xl font-bold">Leave a comment Below</h4>
                     <hr className="py-3 mt-2"></hr>
 
-                    <input 
+                    {/* <input 
                         {...register("_id")}
                         name="id"
                         type="hidden"
                         value={post.id}
-                    />
+                    /> */}
 
                 <label className="block mb-5">
                     <span className="">Name</span>
                     <input 
-                        {...register("name",{required:true})}
+                        // {...register("name",{required:true})}
                         className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='Carlos Edorh' 
                         type="text" 
                     />
@@ -131,7 +131,7 @@ useEffect(() => {
                 <label className="block mb-5">
                     <span className="">Email</span>
                     <input 
-                        {...register("email",{required:true})}
+                        //{...register("email",{required:true})}
                         className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='example@edcartech.com' 
                         type="text" 
                     />
@@ -140,7 +140,7 @@ useEffect(() => {
                 <label className="block mb-5">
                     <span className="">Comment</span>
                     <textarea 
-                        {...register("comment" ,{required:true})}
+                        //{...register("comment" ,{required:true})}
                         className="shadow border rounded py-2 px-3 form-textarea  mt-1 block w-full outline-none focus:ring text-black" 
                         placeholder='Comment Here' 
                         rows={8} 
