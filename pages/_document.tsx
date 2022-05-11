@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 /* eslint-disable @next/next/no-sync-scripts */
 import * as React from 'react';
 import Document, {Head, Html, Main, NextScript} from 'next/document';
@@ -17,7 +18,10 @@ export default class MyDocument extends Document {
           
           <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
       
-          <script src='/assets/js/microlight.js'></script>
+          {/* <script src='/assets/js/microlight.js'></script>
+          <script src='/assets/js/prism.js' data-manual></script>
+          <link rel='stylesheet' href='/assets/css/prism.css'/> */}
+
 
          {/* PWA primary color */}
           {/* <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css" />

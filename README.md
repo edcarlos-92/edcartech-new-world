@@ -33,6 +33,8 @@ https://code-boxx.com/display-code-snippets-html/
 
 
 
-
+https://www.apollographql.com/docs/react/data/mutations/
+https://www.wpgraphql.com/docs/comments/
+https://react-hook-form.com/
 
 

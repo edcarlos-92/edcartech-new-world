@@ -3,127 +3,181 @@ import {
     InMemoryCache,
     ApolloProvider,
     useQuery,
-    gql
+    gql,
+    useMutation
   } from "@apollo/client";
+import ImageFragment from "./queries/fragments/image";
+import {ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY, PostFragment, POST_DETAILS_QUERY, SEARCHQUERY, TECH_TIPS_QUERY} from "./queries/fragments/post";
+
+export const API_URL:any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;//'https://cms.edcartech.com/graphql';//
 
   export const client = new ApolloClient({
-    uri:process.env.WORDPRESS_API_URL, //'https://cms.edcartech.com/graphql',
+    uri:API_URL,//process.env.WORDPRESS_API_URL, //'https://cms.edcartech.com/graphql',
     cache: new InMemoryCache()
   });
 
-  export async function getAllTechTipsPosts() {
-    const result:any = await client.query({
-      query: gql`
-      query AllPosts {
-        posts(where: {orderby: {field: DATE, order: DESC}}) {
-          edges {
-            node {
-              title
-              excerpt
-              slug
-              date
-              featuredImage {
-                node {
-                  sourceUrl
-                }
-              }
-              author {
-                node {
-                  name
-                  firstName
-                  lastName
-                  avatar {
-                    url
-                  }
-                }
-              }
-              id
-            }
-          }
-        }
-      }`
-    })
-      return result.data.posts
+
+  async function fetchAPI(query:any, {variables}:any = {}) {
+    const headers:any = {'Content-Type': 'application/json'};
+    if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
+      headers[
+        'Authorization'
+      ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
+    }
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({query, variables}),
+    });
+  
+    const json = await res.json();
+    if (json.errors) {
+      console.log(json.errors);
+      throw new Error('Failed to fetch API');
+    }
+  
+    return json.data;
   }
 
+  export async function getLatestPosts() {
+    const data = await fetchAPI(FETCH_EXAMPLEQUERY);
+    return data?.posts;
+  }
+
+  export async function getAllTechTipsPosts() {
+    const result:any = await client.query({ query: TECH_TIPS_QUERY })
+    return result.data.posts
+  }
 
   export async function getAllPostsWithSlug() {
-    const result:any = await client.query({
-      query: gql`
-      {
-        posts(first: 10000) {
-          edges {
-            node {
-              slug
-            }
-          }
-        }
-      }
-    `})
+    const result:any = await client.query({query: ALL_POST_WITH_SLUG_QUERY})
     console.log('allPosts BackEnd :-->> ', result);
     return result.data.posts
   }
 
-
-
   export async function getDetailPosts(slug:any) {
+    const result = await client.query({query: POST_DETAILS_QUERY, variables: { 'id':slug },})
+    console.log('dETAIL POST :-->> ', result);
+    return result.data.post
+  }
 
-    const result = await client.query({
-      query: gql
 
-      //post(id: "hello-world", idType: SLUG) {
-      `
-      query MyQuery2($id:ID!) {
-        post(id: $id, idType: SLUG) {
-          author {
-            node {
-              avatar {
-                url
-              }
-              id
-              name
-              email
-            }
-          }
-          comments {
-            nodes {
-              commentId
-              id
-              content
-              date
-              author {
-                node {
-                  avatar {
-                    url
-                  }
-                  email
-                  id
-                  name
-                }
-              }
-            }
-          }
-          content
-          date
-          featuredImage {
-            node {
-              uri
-              title
-              sourceUrl
-            }
-          }
-          title
-          slug
-        }
-      }
-
-    `,
-      //{
-        variables: { 'id':slug },
-     // }
-  })
+/*
+  export function CreatePostComment(body:any){
+    const {id,name,email,comment}=body;
+    const [CreatePostComment, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':id,'name':name,'email':email,'comment':comment },});
+    //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
+    if (body === "" || body === null ) return 'No Data To Be Sent ...';
+    if (loading) return 'Submitting...';
+    if (error) return `Submission error! ${error.message}`;
+    if (data) return data.json();
+  }
+  */
+  /*
+  export function createPostComment(data:any){
+    const {id,name,email,comment}=data;
+    const result:any =  fetch(API_URL, {
+      method: 'POST',
+      //headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify({query: CREATE_POST_COMMENT_QUERY, variables: { 'id':id,'name':name,'email':email,'comment':comment },}),
+    }).then(res => res.json())
+      .then(res => console.log(`posts Promise`,res))
+      //return result.data;
+  }
+  */
 
   /*
+  export async function createPostComment(data:any) {
+    const {id,name,email,comment}=data;
+    const result = await fetchAPI({query: CREATE_POST_COMMENT_QUERY, variables: { 'id':id,'name':name,'email':email,'comment':comment },})
+    console.log('Comment Created :-->> ', result);
+    return result.data.post
+  }
+  */
+
+
+
+  export function getSearchResultsPromise(){
+    const result:any =  fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({query: FETCH_EXAMPLEQUERY,}),
+    }).then(res => res.json())
+      .then(res => console.log(`posts Promise`,res))
+      //return result.data;
+  }
+
+
+export function GetSearchResultsUseQuery(keywords:any){
+  const { loading, error, data }:any = useQuery(SEARCHQUERY,{ variables: { 'keyword':keywords },});
+  //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
+  if (keywords === "" || keywords === null ) return 'No Records Found...';
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  if (data) return data;
+}
+//====================================SEARCH TEST =========================
+export async function getSearchPostResults() {
+    const result:any = await client.query({
+      query: gql`
+      query GET_SEARCH_RESULTS( $first: Int, $after: String, $query: String ) {
+        posts: posts(first: $first, after: $after, where: {search: $query}) {
+          edges {
+            node {
+              ...PostFragment
+            }
+            cursor
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+       }
+       ${ImageFragment}
+       ${PostFragment}
+       `
+    })
+    //console.log('allPosts BackEnd :-->> ', result);
+    return result.data.posts
+  }
+
+  export async function getSearchPostResultsOffSetTotalPagination() {
+    const result:any = await client.query({
+      query: gql`
+      query GET_SEARCH_RESULTS( $first: Int, $after: String, $query: String ) {
+       posts: posts(first: $first, after: $after, where: {search: $query}) {
+         edges {
+           node {
+             ...PostFragment
+           }
+           cursor
+         }
+         pageInfo {
+           hasNextPage
+           endCursor
+         }
+       }
+      }
+      ${ImageFragment}
+      ${PostFragment}
+      `
+    })
+    //console.log('allPosts BackEnd :-->> ', result);
+    return result.data.posts
+  }
+
+//====================================SEARCH TEST =========================
+
+
+
+
+  
+
+
+ /*
       query MyQuery2($slug:String) {
         posts {
           nodes {
@@ -162,11 +216,6 @@ import {
       }
   
   */
-  
-    console.log('dETAIL POST :-->> ', result);
-    return result.data.post
-  }
-
         /*
       fragment AuthorFields on User {
         name

@@ -7,21 +7,15 @@ export default function Posts(props:any) {
 
     const {posts}= props 
     //const heroPost = posts.edges[0]?.node
-    const heroPost = posts.edges
-    console.log(`heroPost`,heroPost)
-    //console.log(`Posts`,posts.edges.node.author);
-    // console.log(heroPost.excerpt)
-    // console.log(heroPost.slug)
-    // console.log(heroPost.id)
-    // console.log(heroPost.author.node.name)
-    // console.log(heroPost.author.node.avatar.url)
-    // console.log(heroPost.featuredImage.node.sourceUrl)
-    // console.log(heroPost.date)
-
+    const heroPost = posts?.edges || [];
+    //console.log(`heroPost`,heroPost)
+    
   return (
     <div>
-        <div className="grid grid-clos-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6 "> {/* bg-gray-100 */}
 
+        {heroPost  ?
+        
+        <div className="grid grid-clos-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 p-2 md:p-6 "> {/* bg-gray-100 */}
             {heroPost.map( (post:any) =>(
                
                 // <h1 key={post.slug}>{post.author.node.name}</h1>
@@ -45,9 +39,13 @@ export default function Posts(props:any) {
                         </div>
                     </div>
                 </Link>
-
             ))}
         </div>
+
+        : 'No Records Found'}
+
+
+        
 
     </div>
   )

@@ -5,13 +5,15 @@ import {HumanDateTime} from '../../utils'
 import { useForm,SubmitHandler } from "react-hook-form";
 import SideFlexImgText from '../../components/SideFlexImgText'
 import { AnnotationIcon } from '@heroicons/react/outline'
-import { getAllPostsWithSlug, getDetailPosts } from '../../lib/apolloGraphQl'
+import { API_URL, getAllPostsWithSlug, getDetailPosts } from '../../lib/apolloGraphQl'
 import { useRouter } from 'next/router'
 import { CopyBlock, dracula } from 'react-code-blocks'
 import formatPost from '../../utils/formatPost'
+import { CREATE_POST_COMMENT_QUERY } from '../../lib/queries/fragments/post';
+import { useMutation } from '@apollo/client';
 
 interface IFormInput{
-    _id:string;
+    id:string;
     name:string;
     email:string;
     comment:string;
@@ -25,38 +27,92 @@ const codeSample = `const [submitted, setSubmited] = useState(false);
 const {post}=props;
 const {register,handleSubmit,
 formState:{errors}}=useForm<IFormInput>();
-console.log(post)`
+console.log(post)`;
 
 export default function SlugPost( props:any) {
 
-
     let {post}=props;
     //post = post[0];
-    console.log(`SlugPost`,post)
+    //console.log(`SlugPost`,post)
     const router = useRouter()
    
     const [submitted, setSubmited] = useState(false);
     
-    const {register,handleSubmit,formState:{errors}}=useForm<IFormInput>();
+    //const {register,handleSubmit,formState:{errors}}=useForm<IFormInput>();
+    const {register,handleSubmit,formState:{errors},getValues}=useForm();
+    //const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
 
-    const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
-        console.log(data);
+
+
+        //const {id,name,email,comment}=body;
+        // const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':id,'name':name,'email':email,'comment':comment },});
+        //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
+        //if (body === "" || body === null ) return 'No Data To Be Sent ...';
+        //const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY);
+        
+
+
+
+         //const onsubmit = async (body:any)=>{
+        // CreatePostComment(data);         
+        //const body = getValues();
+        const {id,name,email,comment}= getValues();
+        const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':parseInt(id)  ,'name':name,'email':email,'comment':comment },});
+        console.log(`onsubmit Data body comment`,comment)
+        if (loading) return 'Submitting...';
+        if (error) return `Submission error! ${error.message}`;
+        console.log(`Data To be submitted`,data)
+        //if (data) return data;
+
+            
+        //}
+
+
+
+        //const onsubmit = async (body:any)=>{
+            //CreatePostComment(data);           
+            /*
+            console.log(`createComment`,data);
+            const {id,name,email,comment}=data;
+            fetch(API_URL,{
+                method:'POST',//($id:ID!,$name:String,$email:String,$comment:String)
+                //headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({query: CREATE_POST_COMMENT_QUERY, variables: { 'id':id,'name':name,'email':email,'comment':comment },}),
+            }).then(()=>{
+                console.log(`Comment Created`,data);
+                setSubmited(true);
+            }).catch((err)=>{
+                //console.log(err);
+                console.log(`Error In`,err);
+                setSubmited(false);
+            })
+            */
+        //}
+
+
+
+
+
+    /*
+    const onsubmit = async (data:any)=>{
+        console.log(`createComment`,data);
         fetch('/api/createComment',{
             method:'POST',
             body: JSON.stringify(data),
         }).then(()=>{
-            console.log(data)
+            console.log(`Comment Created`,data);
             setSubmited(true);
         }).catch((err)=>{
             console.log(err);
             setSubmited(false);
         })
     }
+    */
 
 
-useEffect(() => {
+// useEffect(() => {
 
-  }, []) 
+//   }, []) 
 
   return (
 
@@ -107,23 +163,35 @@ useEffect(() => {
 
             ) : (
 
-                <form onSubmit={handleSubmit(onsubmit)}  className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
+                <form 
+                //onSubmit={handleSubmit(onsubmit)}
+                onSubmit={handleSubmit(onsubmit)}
+
+                // onSubmit={
+                //     handleSubmit(e => {
+                //     //e.preventDefault();
+                //     onsubmit({ variables: { 'id':1  ,'name':"Edorh Carlos",'email':"edcartech1@gmail.com",'comment':"Confused Comment Submitting" }                     });
+                //   })
+                // }
+                
+                className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
 
                     <h3 className="text-sm text-yellow-500">Enjoy This Article?</h3>
                     <h4 className="text-3xl font-bold">Leave a comment Below</h4>
                     <hr className="py-3 mt-2"></hr>
 
-                    {/* <input 
-                        {...register("_id")}
+                    <input 
+                        {...register("id")}
                         name="id"
                         type="hidden"
-                        value={post.id}
-                    /> */}
+                        value={post.postId}
+                        //ref={node => {name = node;}}
+                    />
 
                 <label className="block mb-5">
                     <span className="">Name</span>
                     <input 
-                        // {...register("name",{required:true})}
+                        {...register("name",{required:true})}
                         className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='Carlos Edorh' 
                         type="text" 
                     />
@@ -132,7 +200,7 @@ useEffect(() => {
                 <label className="block mb-5">
                     <span className="">Email</span>
                     <input 
-                        //{...register("email",{required:true})}
+                        {...register("email",{required:true})}
                         className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='example@edcartech.com' 
                         type="text" 
                     />
@@ -141,7 +209,7 @@ useEffect(() => {
                 <label className="block mb-5">
                     <span className="">Comment</span>
                     <textarea 
-                        //{...register("comment" ,{required:true})}
+                        {...register("comment" ,{required:true})}
                         className="shadow border rounded py-2 px-3 form-textarea  mt-1 block w-full outline-none focus:ring text-black" 
                         placeholder='Comment Here' 
                         rows={8} 
@@ -156,16 +224,19 @@ useEffect(() => {
                 </div>
 
 
-                {/* <input 
+                <span className="inline-flex rounded-md shadow ">
+                <input 
                     className="shadow bg-yellow-400 hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-white font-bold px-4 rounded cursor-pointer" 
                     type="submit" 
-                /> */}
+                />
+                </span>
 
 
                 <span className="inline-flex rounded-md shadow ">  
                 <a
-                    href="/contact"
-                    type="button"
+                    //href="#"
+                    //type="button"
+                    type="submit"
                     className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                     <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
@@ -177,7 +248,7 @@ useEffect(() => {
             </form>
             )}
 
-            {/* Comments */}
+            {/* All Comments  About the post*/}
 
             <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
                 <h3 className="text-4xl">Comments</h3>

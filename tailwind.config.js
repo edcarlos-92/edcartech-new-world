@@ -8,7 +8,7 @@ module.exports = {
     enabled: true,
     content: ['./src/**/*.tsx'],
     options: {
-      safelist: ['dark'], //specific classes
+      safelist: ['dark'], //specific classes #111827
     },
   },
 
@@ -37,6 +37,11 @@ module.exports = {
         'warm-gray': colors.warmGray,
         teal: colors.teal,
       },
+    },
+
+    colors: {
+      transparent: 'transparent',
+      black: '#111827', //'#000',
     },
   },
   variants: {},

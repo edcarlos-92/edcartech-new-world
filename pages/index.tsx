@@ -15,14 +15,10 @@ const heroInfo = {
 export default function index() {
   return (
     <div>
-        
         <PageHeading PageTitle="Edcartech IT Solutions"/>
         <MainMenu />
         <Landing/>
         <Footer/>
-        {/* <FeaturedSliders  data={data.services}/> */}
-        {/* <FeaturedSliders /> */}
-
     </div>
   )
 }

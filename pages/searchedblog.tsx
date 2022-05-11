@@ -4,20 +4,25 @@ import MainMenu from '../components/MainMenu'
 import CenterHero from '../components/CenterHero'
 import {BlogHeroInfo} from '../utils/appConst'
 import PageHeading from '../components/PageHeading'
-import { getAllTechTipsPosts } from '../lib/apolloGraphQl'
+import {GetSearchResultsUseQuery } from '../lib/apolloGraphQl'
 import SearchForm from '../components/pageComponents/SearchForm'
+import { useRouter } from 'next/router'
 
 interface PostProps{
   //posts:Post[]//Or [Post]
 }
 
-//const Home: NextPage = (props:PostProps) => {
-  //const Home = (props:PostProps) => {
-// export default function Blog(props:PostProps){  
-export default function Blog(posts:any){  
+export default  function SearchedBlog(){ 
+
+  const router = useRouter();
+  const {keywords}:any = router.query;
+  //console.log(`keywords`,keywords);
   const {leftTitle,rightTitle,Desc}= BlogHeroInfo;
-  //const{posts}=props
-  //console.log(posts.edges)
+
+  const data = GetSearchResultsUseQuery(keywords);
+
+//console.log(`Arrived At Searches After Queries`,data)
+
   return (
     <div className="mx-auto">
    
@@ -25,22 +30,12 @@ export default function Blog(posts:any){
       <MainMenu />
       <SearchForm />
       <CenterHero leftTitle={leftTitle} rightTitle={rightTitle} Desc={Desc} />
-      <Posts posts={posts} />
+      <Posts posts={data.posts} />
       <Footer/>
 
-      {/* <pre>{JSON.stringify(posts.edges,null,2)}</pre> */}
+      {/* <pre>{JSON.stringify(latestPosts.edges,null,2)}</pre> */}
+      {/* <pre>{keywords !=="" ? JSON.stringify(data.posts,null,2) : 'No Records Found'}</pre> */}
 
     </div>
   )
 }
-
-
-export async function getServerSideProps() {
-  //export async function getStaticProps() {
-    const posts = await getAllTechTipsPosts();
-    //console.log('result :-->> ', posts);
-    return {
-      props:posts,
-    }
-}
-  

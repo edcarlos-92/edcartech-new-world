@@ -16,8 +16,8 @@ export default function CenterHero(props:any) {
   return (
     <div className="relative overflow-hidden font-sans"> {/* bg-gray-100 */}
       <div className="relative pb-6">
-        <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-20">
-          <div className="text-center">
+        <main className="mx-auto max-w-7xl px-4 sm:mt-20">
+          <div className="text-center ">
             <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">{/* text-gray-900 */}
               <span className="block xl:inline">{leftTitle}</span>{' '}
               <span className="block text-indigo-800 xl:inline">{rightTitle}</span>
@@ -27,7 +27,6 @@ export default function CenterHero(props:any) {
             </p>
           </div>
         </main>
-
       </div>
     </div>
   )

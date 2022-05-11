@@ -7,6 +7,17 @@ body{
      font-family : "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS";
 }
 
+div.text-center{
+    margin-top: -40px;
+}
+
+    /* svg#s-icon {
+        fill: white;
+    } */
+    /* .logo-wrapper svg path{
+        fill: green !important;
+      } */
+
 /* html {
     font-family: "Trebuchet MS";
   } */
