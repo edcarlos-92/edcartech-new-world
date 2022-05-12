@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS"; */
 body{
-     font-family : "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS";
+     font-family : "Poppins";
 }
 
 div.text-center{
@@ -37,6 +37,8 @@ div.text-center{
     font-size: large !important;
     line-height: 1.4;
     padding-left: 5px;
+    /* text-overflow: ; */
+    /* white-space: normal; */
 }
 
 div.microlight {

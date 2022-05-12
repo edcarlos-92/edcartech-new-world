@@ -9,6 +9,10 @@ import {
 import ImageFragment from "./queries/fragments/image";
 import {ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY, PostFragment, POST_DETAILS_QUERY, SEARCHQUERY, TECH_TIPS_QUERY} from "./queries/fragments/post";
 
+
+//const fetcher = async (url) => await axios.get(url).then((res) => res.data);
+
+
 export const API_URL:any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;//'https://cms.edcartech.com/graphql';//
 
   export const client = new ApolloClient({
@@ -57,8 +61,17 @@ export const API_URL:any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;//'https://
 
   export async function getDetailPosts(slug:any) {
     const result = await client.query({query: POST_DETAILS_QUERY, variables: { 'id':slug },})
-    console.log('dETAIL POST :-->> ', result);
+    console.log('DETAIL POST :-->> ', result);
     return result.data.post
+  }
+
+  export async function refeshDetailPosts(slug:any) {   
+    //const result = await client.refetchQueries({include: [POST_DETAILS_QUERY],} );
+    //const result = await client.refetchQueries(  {  include: [POST_DETAILS_QUERY], variables: ['id':slug ]   );
+    
+    // const result = await client.query({query: POST_DETAILS_QUERY, variables: { 'id':slug },})
+    //console.log('REFESHED DETAIL POST :-->> ', result);
+    //return result.data.post
   }
 
 

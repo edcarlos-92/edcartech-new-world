@@ -5,12 +5,15 @@ import {HumanDateTime} from '../../utils'
 import { useForm,SubmitHandler } from "react-hook-form";
 import SideFlexImgText from '../../components/SideFlexImgText'
 import { AnnotationIcon } from '@heroicons/react/outline'
-import { API_URL, getAllPostsWithSlug, getDetailPosts } from '../../lib/apolloGraphQl'
+import { API_URL, getAllPostsWithSlug, getDetailPosts, refeshDetailPosts } from '../../lib/apolloGraphQl'
 import { useRouter } from 'next/router'
 import { CopyBlock, dracula } from 'react-code-blocks'
 import formatPost from '../../utils/formatPost'
-import { CREATE_POST_COMMENT_QUERY } from '../../lib/queries/fragments/post';
-import { useMutation } from '@apollo/client';
+import { CREATE_POST_COMMENT_QUERY, POST_DETAILS_QUERY } from '../../lib/queries/fragments/post';
+import { ApolloCache, ApolloQueryResult, DocumentNode, ObservableQuery, useMutation, useQuery } from '@apollo/client';
+
+import useSWR from 'swr'
+
 
 interface IFormInput{
     id:string;
@@ -22,6 +25,21 @@ interface IFormInput{
 // interface PostProps{
 //     post:Post
 // }
+
+// interface RefetchQueriesOptions<
+//   TCache extends ApolloCache<any>,
+//   TResult = Promise<ApolloQueryResult<any>>,
+// > {
+//   updateCache?: (cache: TCache) => void;
+//   include?: Array<string | DocumentNode> | "all" | "active";
+//   onQueryUpdated?: (
+//     observableQuery: ObservableQuery<any>,
+//     diff: Cache.DiffResult<any>,
+//     lastDiff: Cache.DiffResult<any> | undefined,
+//   ) => boolean | TResult;
+//   optimistic?: boolean;
+// }
+
 
 const codeSample = `const [submitted, setSubmited] = useState(false);
 const {post}=props;
@@ -43,6 +61,36 @@ export default function SlugPost( props:any) {
     //const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
 
 
+        //const detailPost =   getDetailPosts(post.slug) ;
+        //const refeshedDetailPost =   refeshDetailPosts("") ;
+        
+        // const fetcher = (...args:any) => fetch(args).then(res => res.json());
+        // const { dataR, errorR }:any = useSWR('/api/profile-data', fetcher);
+        // if (errorR) return <div>Failed to load</div>
+        // if (!dataR) return <div>Loading...</div>
+    //     const [detailPost,setDetailPost] = useState([])
+    //     const [isLoading, setLoading] = useState(false)
+    //     //setLoading(false)
+    //    const r = fetch(API_URL,{
+    //     method: 'POST',
+    //     //headers,
+    //     body: JSON.stringify({POST_DETAILS_QUERY, variables:{'id':post.slug} }),
+    //    })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setDetailPost(data)
+    //     //setLoading(false)
+    //   })
+    //   console.log(`refeshedDetailPost`, r)
+
+       const detailPost = useQuery(POST_DETAILS_QUERY,{ variables: { 'id':post.slug},});
+       post = detailPost?.data?.post
+       console.log(` New Post detailPost`, post)
+
+
+
+
+       
 
         //const {id,name,email,comment}=body;
         // const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':id,'name':name,'email':email,'comment':comment },});
@@ -62,9 +110,7 @@ export default function SlugPost( props:any) {
         if (loading) return 'Submitting...';
         if (error) return `Submission error! ${error.message}`;
         console.log(`Data To be submitted`,data)
-        //if (data) return data;
-
-            
+        //if (data) return data
         //}
 
 
@@ -114,159 +160,188 @@ export default function SlugPost( props:any) {
 
 //   }, []) 
 
-  return (
+  return ( 
 
-        <main>
-            
-            <MainMenu />
-
-            {/* <img 
-                className="w-full h-40 object-cover" 
-                src={urlFor(post.mainImage).url()} 
-                alt="" 
-            /> */}
-                
-            <article className="max-w-3xl mx-auto p-5 ">
-
-                    {/* <CopyBlock
-                        language={`javascript`}
-                        text={codeSample}
-                        showLineNumbers={true}
-                        theme={dracula}
-                        wrapLines={true}
-                        codeBlock
-                    /> */}
-                    <br />
-                
-                <h1 className="text-4xl mt-10 mb-5" >{post.title}</h1>
-            
-                <span className="font-light leading-7" dangerouslySetInnerHTML={{ __html: formatPost(post)}} />
-               
-                <SideFlexImgText 
-                    srcImg={post.author?.node.avatar.url}  
-                    h1Text={post.author.node.name} 
-                    ptext={`Blog Post By`}
-                    aText={post.author.node.name} 
-                    dateText={ ` - Published at ${HumanDateTime(post.date)}` }
-                />
-
-            </article>         
-
-            <hr className="max-w-lg my-5 mx-auto border-yellow-500" />
-
-            {submitted ? (
-
-                <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto">
-                    <h3 className="text-3xl font-bold">Thank you for Submitting your comment!</h3>
-                    <p>Once it has been approved, it will appear bellow!</p>
-                </div>
-
-            ) : (
-
-                <form 
-                //onSubmit={handleSubmit(onsubmit)}
-                onSubmit={handleSubmit(onsubmit)}
-
-                // onSubmit={
-                //     handleSubmit(e => {
-                //     //e.preventDefault();
-                //     onsubmit({ variables: { 'id':1  ,'name':"Edorh Carlos",'email':"edcartech1@gmail.com",'comment':"Confused Comment Submitting" }                     });
-                //   })
-                // }
-                
-                className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-
-                    <h3 className="text-sm text-yellow-500">Enjoy This Article?</h3>
-                    <h4 className="text-3xl font-bold">Leave a comment Below</h4>
-                    <hr className="py-3 mt-2"></hr>
-
-                    <input 
-                        {...register("id")}
-                        name="id"
-                        type="hidden"
-                        value={post.postId}
-                        //ref={node => {name = node;}}
-                    />
-
-                <label className="block mb-5">
-                    <span className="">Name</span>
-                    <input 
-                        {...register("name",{required:true})}
-                        className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='Carlos Edorh' 
-                        type="text" 
-                    />
-                </label>
-            
-                <label className="block mb-5">
-                    <span className="">Email</span>
-                    <input 
-                        {...register("email",{required:true})}
-                        className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='example@edcartech.com' 
-                        type="text" 
-                    />
-                </label>
-
-                <label className="block mb-5">
-                    <span className="">Comment</span>
-                    <textarea 
-                        {...register("comment" ,{required:true})}
-                        className="shadow border rounded py-2 px-3 form-textarea  mt-1 block w-full outline-none focus:ring text-black" 
-                        placeholder='Comment Here' 
-                        rows={8} 
-                    />
-                </label>
-
-                {/* Error will retuen when firld validation fails */}
-                <div className="flex flex-col p-5">
-                    {errors.name && (<span className="text-red-500">-Name Field is required</span>)}
-                    {errors.email && (<span className="text-red-500">-Email Field is required</span>)}
-                    {errors.comment && (<span className="text-red-500">-Comment Field is required</span>)}
-                </div>
-
-
-                <span className="inline-flex rounded-md shadow ">
-                <input 
-                    className="shadow bg-yellow-400 hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-white font-bold px-4 rounded cursor-pointer" 
-                    type="submit" 
-                />
-                </span>
-
-
-                <span className="inline-flex rounded-md shadow ">  
-                <a
-                    //href="#"
-                    //type="button"
-                    type="submit"
-                    className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                    <span>Submit</span>
-                </a>   
-                </span>
+        <>
+        
+        {post ? 
+        
+        
+                <main>
                     
+                <MainMenu />
+                
+                    {/* <img 
+                        className="w-full h-40 object-cover" 
+                        src={urlFor(post.mainImage).url()} 
+                        alt="" 
+                    />  */}
 
-            </form>
-            )}
 
-            {/* All Comments  About the post*/}
+                    
+                <article className="max-w-3xl mx-auto p-5 ">
 
-            <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
-                <h3 className="text-4xl">Comments</h3>
-                <hr className="pb-2" />
+                    <img 
+                        className="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" 
+                        //src={urlFor(post.mainImage).url()} 
+                        src={post?.featuredImage.node.sourceUrl} 
+                        alt="featuredImage" 
+                    />
 
-                {post.comments.nodes.map((comment:any)=>(
+                        {/* <CopyBlock
+                            language={`javascript`}
+                            text={codeSample}
+                            showLineNumbers={true}
+                            theme={dracula}
+                            wrapLines={true}
+                            codeBlock
+                        /> */}
+                        <br />
+                    
+                    <h1 className="text-4xl mt-10 mb-5" >{post?.title}</h1>
+                
+                    <span className="font-light leading-7" dangerouslySetInnerHTML={{ __html: formatPost(post)}} />
+                
+                    <SideFlexImgText 
+                        srcImg={post?.author?.node.avatar.url}  
+                        h1Text={post?.author.node.name} 
+                        ptext={`Blog Post By`}
+                        aText={post?.author.node.name} 
+                        dateText={ ` - Published at ${HumanDateTime(post?.date)}` }
+                    />
 
-                    <div key={comment.commentId}>
-                    <p className="">
-                        <span className="text-yellow-500">{comment.author.node.name}</span>  <span dangerouslySetInnerHTML={{ __html: comment.content }} />
-                    </p> 
+                </article>         
+
+                <hr className="max-w-lg my-5 mx-auto border-yellow-500" />
+
+                {submitted ? (
+
+                    <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto">
+                        <h3 className="text-3xl font-bold">Thank you for Submitting your comment!</h3>
+                        <p>Once it has been approved, it will appear bellow!</p>
                     </div>
 
-                ))}
+                ) : (
 
-            </div>
+                    <form 
+                    //onSubmit={handleSubmit(onsubmit)}
+                    onSubmit={handleSubmit(onsubmit)}
 
-        </main>
+                    // onSubmit={
+                    //     handleSubmit(e => {
+                    //     //e.preventDefault();
+                    //     onsubmit({ variables: { 'id':1  ,'name':"Edorh Carlos",'email':"edcartech1@gmail.com",'comment':"Confused Comment Submitting" }                     });
+                    //   })
+                    // }
+                    
+                    className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
+
+                        <h3 className="text-sm text-yellow-500">Enjoy This Article?</h3>
+                        <h4 className="text-3xl font-bold">Leave a comment Below</h4>
+                        <hr className="py-3 mt-2"></hr>
+
+                        <input 
+                            {...register("id")}
+                            name="id"
+                            type="hidden"
+                            value={post?.postId}
+                            //ref={node => {name = node;}}
+                        />
+
+                    <label className="block mb-5">
+                        <span className="">Name</span>
+                        <input 
+                            {...register("name",{required:true})}
+                            className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='Carlos Edorh' 
+                            type="text" 
+                        />
+                    </label>
+                
+                    <label className="block mb-5">
+                        <span className="">Email</span>
+                        <input 
+                            {...register("email",{required:true})}
+                            className="shadow border rounded py-2 px form-input mt-t block w-full  focus:ring outline-none text-black" placeholder='example@edcartech.com' 
+                            type="text" 
+                        />
+                    </label>
+
+                    <label className="block mb-5">
+                        <span className="">Comment</span>
+                        <textarea 
+                            {...register("comment" ,{required:true})}
+                            className="shadow border rounded py-2 px-3 form-textarea  mt-1 block w-full outline-none focus:ring text-black" 
+                            placeholder='Comment Here' 
+                            rows={8} 
+                        />
+                    </label>
+
+                    {/* Error will retuen when firld validation fails */}
+                    <div className="flex flex-col p-5">
+                        {errors.name && (<span className="text-red-500">-Name Field is required</span>)}
+                        {errors.email && (<span className="text-red-500">-Email Field is required</span>)}
+                        {errors.comment && (<span className="text-red-500">-Comment Field is required</span>)}
+                    </div>
+
+
+                    <span className="inline-flex rounded-md shadow ">
+                    
+                    <input 
+                        className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" 
+                        type="submit"
+                        // icon={ <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />}
+                    />
+                    </span>
+
+
+                    {/* <span className="inline-flex rounded-md shadow ">  
+                    <a
+                        //href="#"
+                        //type="button"
+                        type="submit"
+                        className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+                        <span>Submit</span>
+                    </a>   
+                    </span> */}
+                        
+
+                </form>
+                )}
+
+                {/* All Comments  About the post*/}
+
+                <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
+                    <h3 className="text-4xl">Comments</h3>
+                    <hr className="pb-2" />
+
+                    {post?.comments.nodes.map((comment:any)=>(
+
+                        <div key={comment.commentId}>
+                        <p className="">
+                            <span className="text-yellow-500">{comment.author.node.name}</span>  <span dangerouslySetInnerHTML={{ __html: comment.content }} />
+                        </p> 
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </main>
+        
+        
+        
+        : 'Loading....'}
+        
+       
+        
+        
+        </>
+
+       
+
+
     
   )
 }
@@ -308,13 +383,13 @@ export async function getStaticPaths() {
   //export async function getServerSideProps({ params }:any) {
  export async function getStaticProps({ params }:any) {
 
-    console.log('getStaticProps params :-->> ', params);
-    console.log('REQUEST PARAM :-->> ', params.slug);
+    //console.log('getStaticProps params :-->> ', params);
+    //console.log('REQUEST PARAM :-->> ', params.slug);
 
     const postResult = await getDetailPosts(params.slug);
     //const post = JSON.stringify(postResult.nodes);
     const post = postResult;//postResult.nodes;
-    console.log('RESPONSE NODE :-->> ', post);
+    //console.log('RESPONSE NODE :-->> ', post);
 
     return {
       props: {post}
