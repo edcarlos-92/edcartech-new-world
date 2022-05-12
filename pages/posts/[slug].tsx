@@ -14,6 +14,7 @@ import { ApolloCache, ApolloQueryResult, DocumentNode, ObservableQuery, useMutat
 
 import useSWR from 'swr'
 
+import { Loading, Spacer } from "@nextui-org/react";
 
 interface IFormInput{
     id:string;
@@ -83,12 +84,9 @@ export default function SlugPost( props:any) {
     //   })
     //   console.log(`refeshedDetailPost`, r)
 
-       const detailPost = useQuery(POST_DETAILS_QUERY,{ variables: { 'id':post.slug},});
-       post = detailPost?.data?.post
+       const refetchDetailPost = useQuery(POST_DETAILS_QUERY,{ variables: { 'id':post.slug},});
+       post = refetchDetailPost?.data?.post
        console.log(` New Post detailPost`, post)
-
-
-
 
        
 
@@ -107,7 +105,8 @@ export default function SlugPost( props:any) {
         const {id,name,email,comment}= getValues();
         const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':parseInt(id)  ,'name':name,'email':email,'comment':comment },});
         console.log(`onsubmit Data body comment`,comment)
-        if (loading) return 'Submitting...';
+        //if (loading) return <h1 className=' grid place-items-center h-50 text-blue-500'>Submitting...</h1>;
+        if (loading) return <div className='grid place-items-center h-screen' ><Loading size="xl">Submitting...</Loading> </div> ;
         if (error) return `Submission error! ${error.message}`;
         console.log(`Data To be submitted`,data)
         //if (data) return data
@@ -203,6 +202,10 @@ export default function SlugPost( props:any) {
                     <span className="font-light leading-7" dangerouslySetInnerHTML={{ __html: formatPost(post)}} />
                 
                     <SideFlexImgText 
+                        h1Classes="text-2xl font-bold"
+                        pClasses="text-sm font-medium"
+                        imgClasses="h-16 w-16 rounded-full"
+                        aClasses="text-blue-900 pl-2"
                         srcImg={post?.author?.node.avatar.url}  
                         h1Text={post?.author.node.name} 
                         ptext={`Blog Post By`}
@@ -319,11 +322,30 @@ export default function SlugPost( props:any) {
                     {post?.comments.nodes.map((comment:any)=>(
 
                         <div key={comment.commentId}>
-                        <p className="">
+
+                        {/* <p className="">
                             <span className="text-yellow-500">{comment.author.node.name}</span>  <span dangerouslySetInnerHTML={{ __html: comment.content }} />
-                        </p> 
+                        </p>  */}
+
+
+                        <SideFlexImgText 
+                            h1Classes="text-l font-bold text-yellow-500"
+                            pClasses="text-sm font-medium"
+                            imgClasses="h-12 w-12 rounded-full"
+                            //aClasses="text-blue-900 pl-2"
+                            //srcImg={post?.author?.node.avatar.url}
+                            srcImg={comment?.author?.node.avatar.url}  
+                            h1Text={comment.author.node.name} 
+                            ptext={<span dangerouslySetInnerHTML={{ __html: comment.content }} />}
+                            //aText={post?.author.node.name} 
+                            //dateText={ comment.author.node.date}
+                        />
+
+
+
                         </div>
 
+                        
                     ))}
 
                 </div>
@@ -332,7 +354,7 @@ export default function SlugPost( props:any) {
         
         
         
-        : 'Loading....'}
+        : <div className='grid place-items-center h-screen' ><Loading size="xl">Loading...</Loading> </div>}
         
        
         

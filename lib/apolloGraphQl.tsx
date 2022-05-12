@@ -6,6 +6,7 @@ import {
     gql,
     useMutation
   } from "@apollo/client";
+import { Loading } from "@nextui-org/react";
 import ImageFragment from "./queries/fragments/image";
 import {ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY, PostFragment, POST_DETAILS_QUERY, SEARCHQUERY, TECH_TIPS_QUERY} from "./queries/fragments/post";
 
@@ -127,7 +128,8 @@ export function GetSearchResultsUseQuery(keywords:any){
   const { loading, error, data }:any = useQuery(SEARCHQUERY,{ variables: { 'keyword':keywords },});
   //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
   if (keywords === "" || keywords === null ) return 'No Records Found...';
-  if (loading) return 'Loading...';
+  //if (loading) return 'Loading...'; <h1 className='text-blue-500'>Submitting...</h1>;
+  if (loading) return <div className='grid place-items-center h-screen' ><Loading size="xl">Loading...</Loading></div>  ;
   if (error) return `Error! ${error.message}`;
   if (data) return data;
 }
