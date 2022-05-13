@@ -14,7 +14,7 @@ import { ApolloCache, ApolloQueryResult, DocumentNode, ObservableQuery, useMutat
 
 import useSWR from 'swr'
 
-import { Loading, Spacer } from "@nextui-org/react";
+import { Button, Loading, Spacer } from "@nextui-org/react";
 
 interface IFormInput{
     id:string;
@@ -22,25 +22,6 @@ interface IFormInput{
     email:string;
     comment:string;
 }
-
-// interface PostProps{
-//     post:Post
-// }
-
-// interface RefetchQueriesOptions<
-//   TCache extends ApolloCache<any>,
-//   TResult = Promise<ApolloQueryResult<any>>,
-// > {
-//   updateCache?: (cache: TCache) => void;
-//   include?: Array<string | DocumentNode> | "all" | "active";
-//   onQueryUpdated?: (
-//     observableQuery: ObservableQuery<any>,
-//     diff: Cache.DiffResult<any>,
-//     lastDiff: Cache.DiffResult<any> | undefined,
-//   ) => boolean | TResult;
-//   optimistic?: boolean;
-// }
-
 
 const codeSample = `const [submitted, setSubmited] = useState(false);
 const {post}=props;
@@ -62,103 +43,20 @@ export default function SlugPost( props:any) {
     //const onsubmit:SubmitHandler<IFormInput> = async (data:any)=>{
 
 
-        //const detailPost =   getDetailPosts(post.slug) ;
-        //const refeshedDetailPost =   refeshDetailPosts("") ;
         
-        // const fetcher = (...args:any) => fetch(args).then(res => res.json());
-        // const { dataR, errorR }:any = useSWR('/api/profile-data', fetcher);
-        // if (errorR) return <div>Failed to load</div>
-        // if (!dataR) return <div>Loading...</div>
-    //     const [detailPost,setDetailPost] = useState([])
-    //     const [isLoading, setLoading] = useState(false)
-    //     //setLoading(false)
-    //    const r = fetch(API_URL,{
-    //     method: 'POST',
-    //     //headers,
-    //     body: JSON.stringify({POST_DETAILS_QUERY, variables:{'id':post.slug} }),
-    //    })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setDetailPost(data)
-    //     //setLoading(false)
-    //   })
-    //   console.log(`refeshedDetailPost`, r)
-
        const refetchDetailPost = useQuery(POST_DETAILS_QUERY,{ variables: { 'id':post.slug},});
        post = refetchDetailPost?.data?.post
-       console.log(` New Post detailPost`, post)
+       //console.log(` New Post detailPost`, post)
 
        
-
-        //const {id,name,email,comment}=body;
-        // const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':id,'name':name,'email':email,'comment':comment },});
-        //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
-        //if (body === "" || body === null ) return 'No Data To Be Sent ...';
-        //const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY);
-        
-
-
-
-         //const onsubmit = async (body:any)=>{
-        // CreatePostComment(data);         
-        //const body = getValues();
         const {id,name,email,comment}= getValues();
         const [onsubmit, { data, loading, error }]:any  = useMutation(CREATE_POST_COMMENT_QUERY,{ variables: { 'id':parseInt(id)  ,'name':name,'email':email,'comment':comment },});
-        console.log(`onsubmit Data body comment`,comment)
+        //console.log(`onsubmit Data body comment`,comment)
         //if (loading) return <h1 className=' grid place-items-center h-50 text-blue-500'>Submitting...</h1>;
         if (loading) return <div className='grid place-items-center h-screen' ><Loading size="xl">Submitting...</Loading> </div> ;
         if (error) return `Submission error! ${error.message}`;
-        console.log(`Data To be submitted`,data)
-        //if (data) return data
-        //}
-
-
-
-        //const onsubmit = async (body:any)=>{
-            //CreatePostComment(data);           
-            /*
-            console.log(`createComment`,data);
-            const {id,name,email,comment}=data;
-            fetch(API_URL,{
-                method:'POST',//($id:ID!,$name:String,$email:String,$comment:String)
-                //headers: {'Content-Type': 'application/json',},
-                body: JSON.stringify({query: CREATE_POST_COMMENT_QUERY, variables: { 'id':id,'name':name,'email':email,'comment':comment },}),
-            }).then(()=>{
-                console.log(`Comment Created`,data);
-                setSubmited(true);
-            }).catch((err)=>{
-                //console.log(err);
-                console.log(`Error In`,err);
-                setSubmited(false);
-            })
-            */
-        //}
-
-
-
-
-
-    /*
-    const onsubmit = async (data:any)=>{
-        console.log(`createComment`,data);
-        fetch('/api/createComment',{
-            method:'POST',
-            body: JSON.stringify(data),
-        }).then(()=>{
-            console.log(`Comment Created`,data);
-            setSubmited(true);
-        }).catch((err)=>{
-            console.log(err);
-            setSubmited(false);
-        })
-    }
-    */
-
-
-// useEffect(() => {
-
-//   }, []) 
-
+        //console.log(`Data To be submitted`,data)
+      
   return ( 
 
         <>
@@ -175,8 +73,6 @@ export default function SlugPost( props:any) {
                         src={urlFor(post.mainImage).url()} 
                         alt="" 
                     />  */}
-
-
                     
                 <article className="max-w-3xl mx-auto p-5 ">
 
@@ -289,11 +185,22 @@ export default function SlugPost( props:any) {
 
                     <span className="inline-flex rounded-md shadow ">
                     
-                    <input 
+                    {/* <input 
                         className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" 
                         type="submit"
                         // icon={ <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />}
-                    />
+                    /> */}
+
+                    <Button
+                    //className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"        
+                    icon={<AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />} 
+                    color="warning"
+                    type='submit'
+                    flat
+                    >
+                    Submit Comment For Review
+                    </Button>
+
                     </span>
 
 

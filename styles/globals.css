@@ -4,12 +4,22 @@
 
 /* "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS"; */
 body{
-     font-family : "Poppins";
+     font-family : "Trebuchet MS";/*Georgia   Bitstream Charter  serif  Trebuchet MS   Poppins*/
 }
 
 div.text-center{
     margin-top: -40px;
 }
+strong{
+    font-weight: bolder;
+    font-size: larger;
+    /* color:#111827; */
+}
+p a{
+    color:cornflowerblue;
+}
+
+
 
     /* svg#s-icon {
         fill: white;
