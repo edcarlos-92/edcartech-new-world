@@ -29,6 +29,8 @@ import { Popover, Transition } from '@headlessui/react'
 import { MailIcon, MenuIcon, PhoneIcon, XIcon } from '@heroicons/react/outline'
 import CenterHeroHeader from '../components/CenterHero'
 import Footer from '../components/Footer'
+import MainMenu from '../components/MainMenu'
+import PageHeading from '../components/PageHeading'
 
 const navigation = [
   { name: 'Changelog', href: '#' },
@@ -143,8 +145,11 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
 
+    <PageHeading PageTitle="Edcartech IT Solutions"/>
+        <MainMenu />
     <CenterHeroHeader leftTitle={heroInfo.leftTitle} rightTitle={heroInfo.rightTitle} Desc={heroInfo.Desc} />
 
+   
 
       <main className="overflow-hidden">
         {/* Header */}

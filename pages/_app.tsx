@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import '../styles/style.css'
 import '../styles/tailwind.css'
+import '../styles/about.css'
+import '../styles/portfolio.css'
 //import 'flowbite';
 import {ThemeProvider} from 'next-themes'
 import { ApolloProvider } from '@apollo/client'

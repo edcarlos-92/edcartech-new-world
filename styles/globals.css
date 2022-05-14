@@ -49,9 +49,47 @@ p a{
     padding-left: 5px;
     /* text-overflow: ; */
     /* white-space: normal; */
+    /* word-break: break-all; */
+    /* overflow-wrap: break-word !important; */
+    
 }
 
 div.microlight {
     margin-top: 5px;
+    /* display: flex; */
+    /* word-break: break-all; */
+    /* overflow-wrap: break-word; */
 
+    /* width: 50px; */
+    /* word-break: normal;
+    overflow-wrap: break-word; */
+    /* overflow-wrap: break-word !important; */
+
+    /* white-space:normal; */
+
+}
+.portfolio-top{
+    margin-bottom: -250px;
+}
+.portfolio-about-me{
+    margin-top: -130px;
+}
+
+.portfolio-my-services{
+    margin-top: -80px;
+}
+.portfolio-my-skills{
+    margin-top: -90px;
+}
+@media (max-width: 500px) {
+    .portfolio-about-me{
+        margin-top: -100px;
+    }
+    /* .portfolio-my-skills{
+        margin-top: -100px;
+    } */
+
+    .portfolio-my-services{
+        margin-top: -50px;
+    }
 }

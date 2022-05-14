@@ -154,6 +154,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@deadcoder0904/react-typical@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@deadcoder0904/react-typical/-/react-typical-0.1.2.tgz#a2eabfe1abdd92ea893af9838fdc73d853c2181d"
+  integrity sha512-6lQcCAL3yjb+lbRnVIRMFRkc8Z8Kub9enG3kNRmZdozRdc9eBWGKGa6RT5hEontc14ASPr9qSeJEV3I7++YvMA==
+
 "@emotion/is-prop-valid@^1.1.0":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.1.2.tgz#34ad6e98e871aa6f7a20469b602911b8b11b3a95"
@@ -3885,6 +3890,11 @@ type-fest@^0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
+
+type@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/type/-/type-2.6.0.tgz#3ca6099af5981d36ca86b78442973694278a219f"
+  integrity sha512-eiDBDOmkih5pMbo9OqsqPRGMljLodLcwd5XD5JbtNB0o89xZAwynY9EdCDsJU7LtcVCClu9DvM7/0Ep1hYX3EQ==
 
 typescript@4.5.4:
   version "4.5.4"
