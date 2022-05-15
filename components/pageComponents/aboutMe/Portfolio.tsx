@@ -101,7 +101,7 @@ export default function Portfolio() {
                     <div className="column right">
                         {/* <div className="text">I'm Carlos <span className="typing-2"></span></div> */}
                         <div className="text"><span className="typing-2"></span></div>
-                        <p>I started coding far back in 2010 whilst in school offering Bachelor of science in Information and Communication Technology. Over the years i used various Tech Stacks in C++, VB.Net, PHP,C# & JavaScript. worked with different companies in Education , Security, FinTech and Mining where in most cases i built systems from scratch to support company protocols. i gained experience in building applications like School Management System, Hospital Management System, Saving and Loan Management, Archive & Electronic Document Management System, Point Of Sale, E-Commerce and Web Applications. Currently a FullStack Developer in JavaScript (Node/React/Next.js), PHP(CodeIgniter & Laravel).</p>
+                        <p>Started coding far back in 2010 whilst in school offering Bachelor of science in Information and Communication Technology. Over the years used various Tech Stacks in C++, VB.Net, PHP,C# & JavaScript. worked with different companies in Education , Security, FinTech and Mining where in most cases i built systems from scratch to support company protocols. i gained experience in building applications like School Management System, Hospital Management System, Saving and Loan Management, Archive & Electronic Document Management System, Point Of Sale, E-Commerce and Web Applications. Currently a FullStack Developer in JavaScript (Node/React/Next.js), PHP(CodeIgniter & Laravel).</p>
                         <a href="#">Download My CV</a>
                     </div>
                 </div>
@@ -145,8 +145,8 @@ export default function Portfolio() {
                 <div className="skills-content">
                     <div className="column left">
                         <div className="text">My creative skills & experiences.</div>
-                        <p>I tried out a lot of technologies in different programming languages some fruitful and some not really in demand so they have been relegated. frameworks are just platforms to use these programming languages. i pride myself of knowing what it takes to build a real world application in these various languages and how competent i feel about them.</p>
-                        <a href="#">Read more</a>
+                        <p>After trying out a lot of technologies in different programming languages some fruitful and some not really in demand so they have been relegated. frameworks are just platforms to facilitate the use of these programming languages and i have interacted with quite a few of them to mentiona few like React,Redux for State Mnanagement, Context API, GraphQl, Building REST API with node and Managing databases like MySql, MongoDb, MSSQL  i pride myself of doing what it takes to build a real world application in these various languages and how competent i feel about them.</p>
+                        {/* <a href="#">Read more</a> */}
                     </div>
                     <div className="column right">
                         <div className="bars">
@@ -172,8 +172,8 @@ export default function Portfolio() {
                         </div>
                         <div className="bars">
                             <div className="info">
-                                <span>PHP(CodeIgniter)</span>
-                                <span>60%</span>
+                                <span>PHP(Wordpress,CodeIgniter)</span>
+                                <span>70%</span>
                             </div>
                             <div className="line php"></div>
                         </div>
