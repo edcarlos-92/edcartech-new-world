@@ -328,7 +328,7 @@ export async function getStaticPaths() {
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
         // - At most once every 10 seconds
-        revalidate: 10, // In seconds
+        //revalidate: 10, // In seconds
       //{
         //post: data.post,
         //posts: data.posts,
