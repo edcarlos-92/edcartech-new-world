@@ -303,8 +303,8 @@ export async function getStaticPaths() {
     //   })
 
       //fallback: true,
-      fallback: 'blocking',
-      //fallback: false,
+      //fallback: 'blocking',
+        fallback: false,
     }
   }
 
