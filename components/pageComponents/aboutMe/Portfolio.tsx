@@ -145,7 +145,7 @@ export default function Portfolio() {
                 <div className="skills-content">
                     <div className="column left">
                         <div className="text">My creative skills & experiences.</div>
-                        <p>After trying out a lot of technologies in different programming languages some fruitful and some not really in demand so they have been relegated. frameworks are just platforms to facilitate the use of these programming languages and i have interacted with quite a few of them to mentiona few like React,Redux for State Mnanagement, Context API, GraphQl, Building REST API with node and Managing databases like MySql, MongoDb, MSSQL  i pride myself of doing what it takes to build a real world application in these various languages and how competent i feel about them.</p>
+                        <p>After trying out a lot of technologies in different programming languages some fruitful and some not really in demand so they have been relegated. frameworks are just platforms to facilitate the use of these programming languages and i have interacted with quite a few of them and to mention like React,Redux for State Mnanagement, Context API, GraphQl, Building REST API with node and Managing databases like MySql, MongoDb, MSSQL, PostgreSql  i pride myself of doing what it takes to build a real world application in these various languages and how competent i feel about them.</p>
                         {/* <a href="#">Read more</a> */}
                     </div>
                     <div className="column right">
