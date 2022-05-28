@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "sanity.ts", "pages/posts/[slug].jsx", "utils/formatPost.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "sanity.ts", "pages/posts/[slug].jsx", "utils/formatPost.js", "lib/hooks/useEventListener.js"],
   "exclude": ["node_modules"]
 }

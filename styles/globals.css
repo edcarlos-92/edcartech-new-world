@@ -98,3 +98,10 @@ div.microlight {
     /* width:600px; */
     height:210px;
 }
+
+html.light body img.edcartech-logo-type{
+    content:url("../public/edcartech-long.png");
+}
+html.dark body img.edcartech-logo-type{
+    content:url("../public/edcartech-long-white.png");
+}

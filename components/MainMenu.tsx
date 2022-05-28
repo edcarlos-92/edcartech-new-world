@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
+import { Fragment, useCallback, useState } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, MoonIcon, XIcon } from '@heroicons/react/outline'
 import { LoginIcon } from '@heroicons/react/solid'
@@ -9,14 +9,37 @@ import { AnnotationIcon } from '@heroicons/react/outline'
 import {navigation} from '../utils/appConst'
 import ThemeSwitcher from './ThemeSwitcher'
 import {useTheme} from 'next-themes'
+import { useEventListener } from '../lib/hooks/useEventListener'
 
-
+import dynamic from 'next/dynamic';
 
 export default function MainMenu(props:any) {
 
   const {leftTitle,rightTitle,Desc}=props
 
   // const {theme, setTheme} = useTheme()
+
+  // const Standings = dynamic(() => import('../components/Standings/Standings'), {
+  //   ssr: false,
+  // });
+  // const  theme:any = dynamic(
+  //   () => {
+  //     return import("../lib/hooks/clickListerner")
+  //   },
+  //   { ssr: false }
+  // );
+  
+  // let contexTheme = window && window.localStorage.getItem('theme');
+  // const [getTheme,setTheme] = useState(contexTheme);
+  // const handler = useCallback(() => {
+  //   let contexThemeChange = window.localStorage.getItem('theme');
+  //     setTheme(contexThemeChange);
+  //     console.log(`contexTheme`,getTheme);
+  //   },
+  //   [getTheme]
+  // );
+  // // Add event listener using the hook
+  // useEventListener('click', handler);
 
   return (
     <div className="relative font-sans">{/* bg-gray-100 overflow-hidden */}
@@ -29,11 +52,27 @@ export default function MainMenu(props:any) {
                 <div className="flex items-center justify-between w-full md:w-auto  ">
                   <a href="/">
                     <span className="sr-only">Workflow</span>
-                    <img
+                    {/* <img
                       className="h-8 w-auto sm:h-10"
-                      src="/edcartech-long.png"
+                      src="/edcartech-long-white.png"
                       alt=""
-                    />
+                    /> */}
+
+                {/* {
+                  theme === 'dark' 
+                ?   //-no-down
+                  <img className="h-8 w-auto sm:h-10" src="/edcartech-long-white.png" alt="" />                
+                :         
+                  <img className="h-8 w-auto sm:h-10" src="/edcartech-long.png" alt="" />                
+                } */}
+
+                <img
+                  className="h-8 w-auto sm:h-10 edcartech-logo-type"
+                  //src="/edcartech-long-white.png"
+                  alt="EDCARTECH-LOGO"
+                />
+
+
                   </a>
                   <div className="-mr-2 flex items-center md:hidden ">
                     <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center  hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset ">{/* bg-gray-50  focus:ring-indigo-500 text-gray-400 */}
@@ -160,3 +199,5 @@ export default function MainMenu(props:any) {
     </div>
   )
 }
+
+
