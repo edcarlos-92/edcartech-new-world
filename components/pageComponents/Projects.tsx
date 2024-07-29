@@ -511,8 +511,7 @@ export default function projects() {
           </li>
         </a>
 
-{/*         https://synuxfoods.com/admin/login */}
-        <a href="#">
+{/*         <a href="https://synuxfoods.com/admin/login"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/synuxfoods.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -523,10 +522,9 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">SYNUX-POS</p>
             <p className="block text-xs font-small  pointer-events-none text-center">SYNUX Point Of Sale</p>
           </li>
-        </a>
+{/*         </a> */}
 
-{/*https://edcartech.com/index.php/edcartech-it-solutions/ */}
-        <a href="">
+{/*         <a href="https://edcartech.com/index.php/edcartech-it-solutions/"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/edcartech.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -537,7 +535,7 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">EDCARTECH</p>
             <p className="block text-xs font-small  pointer-events-none text-center">EDCARTECH IT SOLUTIONS</p>
           </li>
-        </a>
+{/*         </a> */}
 
         <a href="https://mcdslcloud.net/">
           <li className="relative">
@@ -552,8 +550,7 @@ export default function projects() {
           </li>
         </a>
 
-        {/*https://dees-kreation.vercel.app/edcommerce */}
-        <a href="#">
+{/*         <a href="https://dees-kreation.vercel.app/edcommerce"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/deeskreations.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -564,10 +561,9 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">DEE'S KREATIONS</p>
             <p className="block text-xs font-small  pointer-events-none text-center">DEE'S KREATIONS E-Commerce</p>
           </li>
-        </a>
+{/*         </a> */}
 
-        {/*https://insurrance-records.vercel.app/ */}
-        <a href="#">
+        <a href="https://insurrance-records.vercel.app/">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/policy.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -580,8 +576,7 @@ export default function projects() {
           </li>
         </a>
 
-{/*https://barber-shop-mu.vercel.app/ */}
-        <a href="#">
+{/*         <a href="https://barber-shop-mu.vercel.app/"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/barbershop.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -592,10 +587,9 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">UNISEX GROOM</p>
             <p className="block text-xs font-small  pointer-events-none text-center">Barber Shop Management</p>
           </li>
-        </a>
+{/*         </a> */}
 
-{/*         https://avsbonjour.com/all-services */}
-        <a href="#">
+{/*         <a href="https://avsbonjour.com/all-services"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/avs.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -606,10 +600,9 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">AVS BONJOUR</p>
             <p className="block text-xs font-small  pointer-events-none text-center">Service AVS Bonjour</p>
           </li>
-        </a>
+{/*         </a> */}
 
-{/*         https://ed-sanity-blog.vercel.app/ */}
-        <a href="#">
+{/*         <a href="https://ed-sanity-blog.vercel.app/"> */}
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/newedcartech.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -620,7 +613,7 @@ export default function projects() {
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">NEW EDCARTECH</p>
             <p className="block text-xs font-small  pointer-events-none text-center">EDCARTECH Work in Progress</p>
           </li>
-        </a>
+{/*         </a> */}
 
 
   
