@@ -308,8 +308,8 @@ export default function projects() {
         </li>
       </a>
         
-      
-      <a href="http://edbrms.revolutionpacks.com/">
+      {/*http://edbrms.revolutionpacks.com/ */}
+      <a href="#">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/ebbrms.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -322,8 +322,8 @@ export default function projects() {
         </li>
       </a>
 
-
-      <a href="http://svl.revolutionpacks.com/admin/">
+{/* http://svl.revolutionpacks.com/admin/ */}
+      <a href="#">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/edsvl.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -336,8 +336,8 @@ export default function projects() {
         </li>
       </a>
 
-
-      <a href="https://revolutionpacks.com/pos/admin/login/">
+{/* https://revolutionpacks.com/pos/admin/login/ */}
+      <a href="3">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/pos.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -350,8 +350,8 @@ export default function projects() {
         </li>
       </a>
 
-
-      <a href="http://tlms.revolutionpacks.com/">
+{/* http://tlms.revolutionpacks.com/ */}
+      <a href="#">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/tlms.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -364,8 +364,8 @@ export default function projects() {
         </li>
       </a>
 
-
-      <a href="https://mcdslcloud.net/edms/admin/authentication">
+{/* https://mcdslcloud.net/edms/admin/authentication */}
+      <a href="#">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/edms.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -377,8 +377,8 @@ export default function projects() {
           <p className="block text-xs font-small  pointer-events-none text-center">E - Document Manager</p>
         </li>
       </a>
-
-      <a href="https://mcdslcloud.net/edsms/site/login">
+{/* https://mcdslcloud.net/edsms/site/login */}
+      <a href="#">
         <li className="relative">
           <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
             <img src="/assets/images/projects/linked-projects/edsms.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -411,8 +411,9 @@ export default function projects() {
 
       {/* <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-6 xl:gap-x-10"> */}
       <ul role="list" className="grid gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-10"> 
-
-        <a href="https://mcdslcloud.net/aelarms/wp-login.php?loggedout=true">
+        
+{/* https://mcdslcloud.net/aelarms/wp-login.php?loggedout=true */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/aelarms.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -425,8 +426,8 @@ export default function projects() {
           </li>
         </a>
           
-        
-        <a href="https://mcdslcloud.net/aelarms/aa">
+      {/* https://mcdslcloud.net/aelarms/aa */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/aellist.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -439,8 +440,8 @@ export default function projects() {
           </li>
         </a>
   
-  
-        <a href="https://mcdslcloud.net/adarms/wp-login.php?loggedout=true">
+        {/*https://mcdslcloud.net/adarms/wp-login.php?loggedout=true */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/adamus.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -453,8 +454,8 @@ export default function projects() {
           </li>
         </a>
   
-  
-        <a href="https://mcdslcloud.net/adarms/aa">
+{/*           https://mcdslcloud.net/adarms/aa */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/adamuslist.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -467,8 +468,8 @@ export default function projects() {
           </li>
         </a>
   
-  
-        <a href="https://mcdslcloud.net/lmsael/?page_id=828">
+{/*   https://mcdslcloud.net/lmsael/?page_id=828 */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/ael.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -481,8 +482,8 @@ export default function projects() {
           </li>
         </a>
   
-  
-        <a href="https://mcdslcloud.net/lmsael/wp-login.php?loggedout=true">
+{/*   https://mcdslcloud.net/lmsael/wp-login.php?loggedout=true */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/alert.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -510,7 +511,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://synuxfoods.com/admin/login">
+{/*         https://synuxfoods.com/admin/login */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/synuxfoods.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -523,7 +525,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://edcartech.com/index.php/edcartech-it-solutions/">
+{/*https://edcartech.com/index.php/edcartech-it-solutions/ */}
+        <a href="">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/edcartech.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -549,7 +552,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://dees-kreation.vercel.app/edcommerce">
+        {/*https://dees-kreation.vercel.app/edcommerce */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/deeskreations.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -562,7 +566,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://insurrance-records.vercel.app/">
+        {/*https://insurrance-records.vercel.app/ */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/policy.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -575,7 +580,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://barber-shop-mu.vercel.app/">
+{/*https://barber-shop-mu.vercel.app/ */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/barbershop.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -588,7 +594,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://avsbonjour.com/all-services">
+{/*         https://avsbonjour.com/all-services */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/avs.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -601,7 +608,8 @@ export default function projects() {
           </li>
         </a>
 
-        <a href="https://ed-sanity-blog.vercel.app/">
+{/*         https://ed-sanity-blog.vercel.app/ */}
+        <a href="#">
           <li className="relative">
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img src="/assets/images/projects/linked-projects/newedcartech.png" alt="" className="object-cover pointer-events-none projectImg pl-10" />
@@ -615,20 +623,9 @@ export default function projects() {
         </a>
 
 
-
-
-
   
       </ul>
     </div>
-
-
-
-
-
-
-
-
 
 
     </div>
