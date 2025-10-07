@@ -637,15 +637,15 @@ export default function Projects() {
       </div>
 
 
-    {/* Modal */}
-    {isModalOpen && (
-      <div onClick={closeModal} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-        <button aria-label="Close" className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal}>×</button>
-        {modalSrc && (
-          <img src={modalSrc} alt="preview" className="max-h-[85vh] max-w-[90vw] rounded shadow-lg" />
-        )}
-      </div>
-    )}
+      {/* Modal */}
+      {isModalOpen && (
+        <div onClick={closeModal} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <button aria-label="Close" className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal}>×</button>
+          {modalSrc && (
+            <img src={modalSrc} alt="preview" className="max-h-[85vh] max-w-[90vw] rounded shadow-lg" />
+          )}
+        </div>
+      )}
     </div>
   )
 }
