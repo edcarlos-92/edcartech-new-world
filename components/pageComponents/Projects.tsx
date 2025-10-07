@@ -1,4 +1,5 @@
 import React from 'react'
+import { ImageViewer } from "react-image-viewer-dv"
 
 
 export default function projects() {
@@ -22,7 +23,7 @@ export default function projects() {
   <div className="p-10 ">
     <ul role="list" className="grid gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-10"> 
       
-      <>
+      <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -32,9 +33,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For managing document location</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -44,9 +45,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For managing church operation</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -56,9 +57,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For sending single & bulk sms</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -68,9 +69,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For managing and orginizing files & folders</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -80,9 +81,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For sending single & bulk sms</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -92,9 +93,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For daily sales records</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -104,9 +105,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For mining vehicle engine hours</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -116,9 +117,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For revenue autority agency</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -128,9 +129,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For managing sales in a shop</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -140,9 +141,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For reception post large scrren display</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -152,9 +153,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For kg, primary,jhs & senior high</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -164,9 +165,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For kg, primary,jhs & senior high</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -176,9 +177,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For customers goods & packages</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -188,9 +189,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For managing past book & loan packages</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -200,9 +201,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For local bodies elections & voting</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -212,9 +213,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For local clinics & hospitals</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -224,9 +225,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For publishing & sending lotto results</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -236,9 +237,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For bowties & hand made craft online shop</p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -248,9 +249,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For supporting less priviledged school going children </p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -260,9 +261,9 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For hand made local shoes, belts, setc... </p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
 
-     <>
+     <ImageViewer>
         {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
                 <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
@@ -272,7 +273,7 @@ export default function projects() {
                 <p className="block text-xs font-small  pointer-events-none text-center">For KG,PRIMARY &Junior High Learners </p>
             </li>
         {/* </a> */}
-     </>
+     </ImageViewer>
     
 
     </ul>
