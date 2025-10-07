@@ -14,7 +14,7 @@ import {ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY,
 //const fetcher = async (url) => await axios.get(url).then((res) => res.data);
 
 
-export const API_URL:any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;//'https://cms.edcartech.com/graphql';//
+export const API_URL:any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://cms.edcartech.com/graphql';
 
   export const client = new ApolloClient({
     uri:API_URL,//process.env.WORDPRESS_API_URL, //'https://cms.edcartech.com/graphql',

@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.2",
+    "@apollo/client": "3.6.2",
     "@deadcoder0904/react-typical": "^0.1.2",
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
@@ -22,7 +22,7 @@
     "graphql": "^16.4.0",
     "highlight.js": "^11.5.1",
     "moment": "^2.29.1",
-    "next": "latest",
+    "next": "12.1.5",
     "next-sanity": "^0.5.1",
     "next-themes": "^0.1.1",
     "react": "^17.0.2",
