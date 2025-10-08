@@ -4,6 +4,12 @@ require('dotenv').config()
 
 module.exports = {
   reactStrictMode: true,
+  
+  // Disable telemetry and analytics
+  telemetry: false,
+  
+  // Disable Vercel Analytics
+  analytics: false,
 
   //using environment variable in next
   env: {
