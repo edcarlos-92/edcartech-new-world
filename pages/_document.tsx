@@ -17,6 +17,39 @@ export default class MyDocument extends Document {
           <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
 
           <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+          
+          {/* Early service worker and analytics blocking */}
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              // Block service workers and analytics early
+              if (typeof window !== 'undefined') {
+                // Block service worker registration
+                const originalRegister = navigator.serviceWorker?.register;
+                if (navigator.serviceWorker && originalRegister) {
+                  navigator.serviceWorker.register = function() {
+                    return Promise.reject(new Error('Service worker registration blocked'));
+                  };
+                }
+                
+                // Block analytics early
+                window.__VERCEL_ANALYTICS_DISABLED__ = true;
+                window.__SENTRY_DISABLED__ = true;
+                
+                // Override fetch to block analytics requests
+                const originalFetch = window.fetch;
+                window.fetch = function(url, options) {
+                  if (typeof url === 'string' && (
+                    url.includes('vitals.vercel-insights.com') ||
+                    url.includes('o529677.ingest.sentry.io') ||
+                    url.includes('service-worker-loader')
+                  )) {
+                    return Promise.reject(new Error('Blocked analytics request'));
+                  }
+                  return originalFetch.apply(this, arguments);
+                };
+              }
+            `
+          }} />
 
           {/* <script src='/assets/js/microlight.js'></script>
           <script src='/assets/js/prism.js' data-manual></script>
@@ -51,10 +84,64 @@ export default class MyDocument extends Document {
           <script src='/assets/js/portfolio.js'></script>
           <script dangerouslySetInnerHTML={{
             __html: `
-              // Disable Vercel Analytics and Sentry
+              // Comprehensive service and analytics disabling
               if (typeof window !== 'undefined') {
+                // Disable Vercel Analytics
                 window.__VERCEL_ANALYTICS_DISABLED__ = true;
+                window.__NEXT_DATA__ = window.__NEXT_DATA__ || {};
+                window.__NEXT_DATA__.runtimeConfig = window.__NEXT_DATA__.runtimeConfig || {};
+                window.__NEXT_DATA__.runtimeConfig.analytics = false;
+                
+                // Disable Sentry
                 window.__SENTRY_DISABLED__ = true;
+                if (window.Sentry) {
+                  window.Sentry = { 
+                    captureException: function() {}, 
+                    captureMessage: function() {},
+                    init: function() {},
+                    configureScope: function() {}
+                  };
+                }
+                
+                // Override analytics functions
+                if (window.analytics) {
+                  window.analytics = function() {};
+                }
+                
+                // Disable service workers
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                      registration.unregister();
+                    }
+                  });
+                }
+                
+                // Override console methods to prevent service worker errors
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                  const message = args[0];
+                  if (typeof message === 'string' && 
+                      (message.includes('service-worker-loader') || 
+                       message.includes('Could not establish connection') ||
+                       message.includes('Receiving end does not exist'))) {
+                    return; // Suppress these errors
+                  }
+                  originalConsoleError.apply(console, args);
+                };
+                
+                // Prevent service worker registration
+                if (window.addEventListener) {
+                  window.addEventListener('beforeunload', function() {
+                    if ('serviceWorker' in navigator) {
+                      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                        for(let registration of registrations) {
+                          registration.unregister();
+                        }
+                      });
+                    }
+                  });
+                }
               }
             `
           }} />
