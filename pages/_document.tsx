@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
 
           <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-          
+
           {/* Early service worker and analytics blocking */}
           <script dangerouslySetInnerHTML={{
             __html: `

@@ -9,6 +9,11 @@
     "NEXT_PUBLIC_ANALYTICS": "0",
     "ANALYTICS": "0",
     "SENTRY_DSN": "",
-    "NEXT_PUBLIC_SENTRY_DSN": ""
+    "NEXT_PUBLIC_SENTRY_DSN": "",
+    "NEXT_PUBLIC_VERCEL_ENV": "production",
+    "VERCEL_ENV": "production",
+    "NODE_ENV": "production",
+    "DISABLE_ESLINT_PLUGIN": "true",
+    "DISABLE_SWC": "true"
   }
 }

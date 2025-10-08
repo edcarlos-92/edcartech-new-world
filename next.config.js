@@ -4,12 +4,26 @@ require('dotenv').config()
 
 module.exports = {
   reactStrictMode: true,
-
-  // Disable telemetry and analytics
+  
+  // Completely disable all Vercel services
+  experimental: {
+    instrumentationHook: false,
+  },
+  
+  // Disable all telemetry and analytics
   telemetry: false,
-
-  // Disable Vercel Analytics
   analytics: false,
+  
+  // Disable webpack optimizations that might inject services
+  webpack: (config, { isServer }) => {
+    // Remove any service worker related plugins
+    config.plugins = config.plugins.filter(plugin => {
+      return !plugin.constructor.name.includes('ServiceWorker') && 
+             !plugin.constructor.name.includes('Workbox');
+    });
+    
+    return config;
+  },
 
   //using environment variable in next
   env: {
