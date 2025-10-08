@@ -36,55 +36,61 @@ if (typeof window !== 'undefined') {
     })
 
     // typing text animation script React,Node,PHP,Wordpress,CodeIgniter
-    var typed = new Typed('.typing', {
-      strings: [
-        'JavaScript',
-        'React/Node',
-        'PHP',
-        'Wordpress',
-        'CodeIgniter',
-        'C# etc...',
-      ],
-      //strings: ['YouTuber', 'Developer', 'Blogger', 'Designer', 'Freelancer'],
-      typeSpeed: 100,
-      backSpeed: 60,
-      loop: true,
-    })
+    if ($('.typing').length > 0) {
+      var typed = new Typed('.typing', {
+        strings: [
+          'JavaScript',
+          'React/Node',
+          'PHP',
+          'Wordpress',
+          'CodeIgniter',
+          'C# etc...',
+        ],
+        //strings: ['YouTuber', 'Developer', 'Blogger', 'Designer', 'Freelancer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+      })
+    }
 
-    var typed = new Typed('.typing-2', {
-      strings: [
-        'a FullStack Software Developer',
-        'Over 10 years of experience',
-        'Good at JavaScript (React/Nextjs/Node)',
-        'use PHP (CodeIgniter) & C# etc...',
-      ],
-      //strings: ['YouTuber', 'Developer', 'Blogger', 'Designer', 'Freelancer'],
-      typeSpeed: 100,
-      backSpeed: 60,
-      loop: true,
-    })
+    if ($('.typing-2').length > 0) {
+      var typed = new Typed('.typing-2', {
+        strings: [
+          'a FullStack Software Developer',
+          'Over 10 years of experience',
+          'Good at JavaScript (React/Nextjs/Node)',
+          'use PHP (CodeIgniter) & C# etc...',
+        ],
+        //strings: ['YouTuber', 'Developer', 'Blogger', 'Designer', 'Freelancer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+      })
+    }
 
     // owl carousel script
-    $('.carousel').owlCarousel({
-      margin: 20,
-      loop: true,
-      autoplay: true,
-      autoplayTimeOut: 2000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false,
+    if ($('.carousel').length > 0) {
+      $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false,
+          },
+          600: {
+            items: 2,
+            nav: false,
+          },
+          1000: {
+            items: 3,
+            nav: false,
+          },
         },
-        600: {
-          items: 2,
-          nav: false,
-        },
-        1000: {
-          items: 3,
-          nav: false,
-        },
-      },
-    })
+      })
+    }
   })
 }
