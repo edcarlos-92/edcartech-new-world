@@ -45,25 +45,45 @@ async function fetchAPI(query: any, { variables }: any = {}) {
 }
 
 export async function getLatestPosts() {
-  const data = await fetchAPI(FETCH_EXAMPLEQUERY);
-  return data?.posts;
+  try {
+    const data = await fetchAPI(FETCH_EXAMPLEQUERY);
+    return data?.posts;
+  } catch (error) {
+    console.error('Error fetching latest posts:', error);
+    return [];
+  }
 }
 
 export async function getAllTechTipsPosts() {
-  const result: any = await client.query({ query: TECH_TIPS_QUERY })
-  return result.data.posts
+  try {
+    const result: any = await client.query({ query: TECH_TIPS_QUERY })
+    return result.data.posts
+  } catch (error) {
+    console.error('Error fetching tech tips posts:', error);
+    return [];
+  }
 }
 
 export async function getAllPostsWithSlug() {
-  const result: any = await client.query({ query: ALL_POST_WITH_SLUG_QUERY })
-  console.log('allPosts BackEnd :-->> ', result);
-  return result.data.posts
+  try {
+    const result: any = await client.query({ query: ALL_POST_WITH_SLUG_QUERY })
+    console.log('allPosts BackEnd :-->> ', result);
+    return result.data.posts
+  } catch (error) {
+    console.error('Error fetching posts with slug:', error);
+    return { edges: [], node: null };
+  }
 }
 
 export async function getDetailPosts(slug: any) {
-  const result = await client.query({ query: POST_DETAILS_QUERY, variables: { 'id': slug }, })
-  console.log('DETAIL POST :-->> ', result);
-  return result.data.post
+  try {
+    const result = await client.query({ query: POST_DETAILS_QUERY, variables: { 'id': slug }, })
+    console.log('DETAIL POST :-->> ', result);
+    return result.data.post
+  } catch (error) {
+    console.error('Error fetching post details:', error);
+    return null;
+  }
 }
 
 export async function refeshDetailPosts(slug: any) {
