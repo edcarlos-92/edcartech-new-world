@@ -98,7 +98,7 @@ export default function MainMenu(props: any) {
                     className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                    <span>Contact Us</span>
+                    <span>Contact Me</span>
                   </a>
                 </span>
 
@@ -169,7 +169,7 @@ export default function MainMenu(props: any) {
 
                   >
                     <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                    <span>Contact Us</span>
+                    <span>Contact Me</span>
                   </a>
 
 
