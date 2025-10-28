@@ -51,7 +51,7 @@ export default function Portfolio() {
         }, isDeleting ? 50 : 100);
 
         return () => clearTimeout(timeout);
-    }, [currentText, isDeleting, textIndex, mounted]);
+    }, [currentText, isDeleting, textIndex, mounted, typingTexts]);
 
     if (!mounted) {
         return (
@@ -104,8 +104,8 @@ export default function Portfolio() {
                                     onClick={() => router.push('/projects')}
                                     style={{
                                         background: theme === 'dark'
-                                            ? 'linear-gradient(#1f2937, #1f2937) padding-box, linear-gradient(135deg, #92a, #3b82f6) border-box'
-                                            : 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #92a, #3b82f6) border-box',
+                                            ? 'linear-gradient(#1f2937, #1f2937) padding-box, linear-gradient(135deg, #9333ea, #3b82f6) border-box'
+                                            : 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #9333ea, #3b82f6) border-box',
                                         border: '2px solid transparent',
                                         borderRadius: '0.5rem',
                                         color: theme === 'dark' ? '#ffffff' : '#1f2937'
