@@ -6,6 +6,7 @@ import { BlogHeroInfo } from '../utils/appConst'
 import PageHeading from '../components/PageHeading'
 import { getAllTechTipsPosts } from '../lib/apolloGraphQl'
 import SearchForm from '../components/pageComponents/SearchForm'
+import { themeConfig } from '../lib/themeConfig'
 
 interface PostProps {
   //posts:Post[]//Or [Post]
@@ -19,7 +20,7 @@ export default function Blog(posts: any) {
   //const{posts}=props
   //console.log(posts.edges)
   return (
-    <div className="mx-auto">
+    <div className={themeConfig.backgrounds.main}>
 
       <PageHeading PageTitle="Edcartech Tech Tips" />
       <MainMenu />
@@ -37,13 +38,13 @@ export default function Blog(posts: any) {
 
 export async function getServerSideProps() {
   //export async function getStaticProps() {
-    const posts = await getAllTechTipsPosts();
-    //console.log('result :-->> ', posts);
-    return {
-      props:posts,
-      // Next.js will attempt to re-generate the page:
+  const posts = await getAllTechTipsPosts();
+  //console.log('result :-->> ', posts);
+  return {
+    props: posts,
+    // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
     //revalidate: 10, // In seconds
-    }
+  }
 }

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 //import Typical from "react-typical";//type@react-typical
 import { ReactTypical } from '@deadcoder0904/react-typical'
 //import ScrollService from "../../../utils/ScrollService";
 //import "./Profile.css";
 /* This example requires Tailwind CSS v2.0+ */
-import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon, DownloadIcon } from '@heroicons/react/outline'
-import { Button, Grid } from "@nextui-org/react";
+import { ChatBubbleLeftIcon as AnnotationIcon, GlobeAltIcon, BoltIcon as LightningBoltIcon, ScaleIcon, ArrowDownTrayIcon as DownloadIcon } from '@heroicons/react/24/outline'
+import { Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 //import useRouter from "next/router";
@@ -13,51 +13,56 @@ import { useRouter } from "next/router";
 
 
 const features = [
-    {
-      name: 'Competitive exchange rates',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-      icon: GlobeAltIcon,
-    },
-    {
-      name: 'No hidden fees',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-      icon: ScaleIcon,
-    },
-    {
-      name: 'Transfers are instant',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-      icon: LightningBoltIcon,
-    },
-    {
-      name: 'Mobile notifications',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-      icon: AnnotationIcon,
-    },
-  ]
+  {
+    name: 'Competitive exchange rates',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'No hidden fees',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: ScaleIcon,
+  },
+  {
+    name: 'Transfers are instant',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: LightningBoltIcon,
+  },
+  {
+    name: 'Mobile notifications',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: AnnotationIcon,
+  },
+]
 
 
 
 export default function Profile() {
 
-    const router = useRouter();
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-        <>
+    <>
 
 
-    <div className="pt-10 font-sans">{/* bg-white */} 
+      <div className="pt-10 font-sans">{/* bg-white */}
         <main>
-            {/* Hero section  */}
-            <div className="relative pb-5">
-                <div className="absolute inset-x-0 bottom-0 h-1/2 " />{/* bg-gray-100 */}
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-                    
-                    {/* <div className="absolute inset-0">
+          {/* Hero section  */}
+          <div className="relative pb-5">
+            <div className="absolute inset-x-0 bottom-0 h-1/2 " />{/* bg-gray-100 */}
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+              <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
+
+                {/* <div className="absolute inset-0">
                     <img
                         className="h-full w-full object-fill"
                         src="/assets/images/pages/test.png"     
@@ -67,33 +72,33 @@ export default function Profile() {
                     </div> */}
 
 
-                    <div className="pb-5">
-                        <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                            <span className="block ">CARLOS SEMEHO EDORH </span>
-                            {/* <span className="block text-indigo-200">you much closer to Technology</span> */}
-                        </h1>
-                    </div>
-                                
-                    <div className="pt-14 pb-10 text-4xl">
+                <div className="pb-5">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    <span className="block ">CARLOS SEMEHO EDORH </span>
+                    {/* <span className="block text-indigo-200">you much closer to Technology</span> */}
+                  </h1>
+                </div>
+
+                <div className="pt-14 pb-10 text-4xl">
 
 
 
 
-                    <div className="profile-container">
-                        <div className="profile-parent">
-                            <div className="profile-details">
-                                
-                                {/* <div className=""> */}
-                                    <span className="">
-                                        <h1>Pationate Computer Engineer 😎 </h1>
-                                        {/* <h1> Full Stack Developer 💻 </h1> */}
-                                        {/* <h1> Experience MERN stack Dev 📱 </h1>
+                  <div className="profile-container">
+                    <div className="profile-parent">
+                      <div className="profile-details">
+
+                        {/* <div className=""> */}
+                        <span className="">
+                          <h1>Pationate Computer Engineer 😎 </h1>
+                          {/* <h1> Full Stack Developer 💻 </h1> */}
+                          {/* <h1> Experience MERN stack Dev 📱 </h1>
                                         <h1> Full Stack Developer 💻 </h1> */}
-                                    </span>
-                                {/* </div> */}
+                        </span>
+                        {/* </div> */}
 
-                                <div className="profile-details-role">
-                                    {/* <span className="primary-text p-0">
+                        <div className="profile-details-role">
+                          {/* <span className="primary-text p-0">
                                         {" "}
                                         <div>
                                             <ReactTypical
@@ -114,78 +119,59 @@ export default function Profile() {
                                             />
                                         </div>
                                     </span> */}
-                                    
-                                    <span className="profile-role-tagline">
-                                    Years of Experience building React,Node,PHP,Wordpress,CodeIgniter etc... applications.
-                                    </span>
-                                </div>
 
-                            {/* <div className="profile-options"> */}
+                          <span className="profile-role-tagline">
+                            Years of Experience building React,Node,PHP,Wordpress,CodeIgniter etc... applications.
+                          </span>
+                        </div>
+
+                        {/* <div className="profile-options"> */}
 
 
-                            <Grid.Container gap={2}>
-                                <Grid>
-                                    <Button 
-                                        bordered 
-                                        color="gradient" 
-                                        auto
-                                        onClick={()=>{router.push(`/projects`)}}
-                                        >
-                                            View Projects
-                                    </Button>
-                                </Grid>
+                        <div className="flex gap-4">
+                          <Button
+                            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white border-none hover:from-blue-600 hover:to-purple-700"
+                            onClick={() => { router.push(`/projects`) }}
+                          >
+                            View Projects
+                          </Button>
 
-                                <Grid>
-                                    <a
-                                        href="ehizcv.pdf"
-                                        download="Ehiedu Ehizcv.pdf"
-                                        type="button"
-                                        className="pr-5 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                    >
-                                        <DownloadIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                                        <span>Get Resume</span>
-                                    </a> 
-                                </Grid>
-
-                                {/* <Grid>
-                                    <a
-                                        href="ehizcv.pdf"
-                                        download="Ehiedu Ehizcv.pdf"
-                                        type="button"
-                                        className="pr-5 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                    >
-                                        <DownloadIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                                        <span>Get Resume</span>
-                                    </a>  
-                                </Grid> */}
-
-                            </Grid.Container>
-      
+                          <a
+                            href="ehizcv.pdf"
+                            download="Ehiedu Ehizcv.pdf"
+                            type="button"
+                            className="pr-5 relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          >
+                            <DownloadIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+                            <span>Get Resume</span>
+                          </a>
+                        </div>
 
 
 
-                            
 
-                           
 
-                                {/* <button className="btn primary-btn"> Hire Me </button>
+
+
+
+                        {/* <button className="btn primary-btn"> Hire Me </button>
                                 <a href="ehizcv.pdf" download="Ehiedu Ehizcv.pdf">
                                 <button className="btn highlighted-btn">Get Resume</button>
                                 </a> */}
 
 
-                                 
 
-                            {/* </div> */}
-                        </div>
-                            
-                            <div className="profile-picture">
-                                <div className="profile-picture-background"></div>
-                            </div>
-                        </div>
+
+                        {/* </div> */}
+                      </div>
+
+                      <div className="profile-picture">
+                        <div className="profile-picture-background"></div>
+                      </div>
                     </div>
+                  </div>
 
-                        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
+                  {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
                             <div className="grid grid-cols-2 gap-4 ">      
                                 <div className="flex react-typical" > 
                                     <ReactTypical
@@ -223,20 +209,20 @@ export default function Profile() {
 
 
 
-                    </div>
-
-
-
-
-
                 </div>
-                </div>
+
+
+
+
+
+              </div>
             </div>
+          </div>
         </main>
-    </div>
+      </div>
 
 
-    {/* <div className="profile-container">
+      {/* <div className="profile-container">
       <div className="profile-parent">
         <div className="profile-details">
           <div className="profile-details-name">
@@ -287,48 +273,48 @@ export default function Profile() {
       </div>
     </div> */}
 
-<div className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">About Me</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Why get me involve ?
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
-          </p>
-        </div>
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">About Me</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Why get me involve ?
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
+              accusamus quisquam.
+            </p>
+          </div>
 
-        <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            {features.map((feature) => (
-              <div key={feature.name} className="relative">
-                <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
-                </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-10">
+            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+              {features.map((feature) => (
+                <div key={feature.name} className="relative">
+                  <dt>
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                      <feature.icon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                  </dt>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
-</div>
-
-
-
-
-    
 
 
 
 
 
-        </>
-        
-       
+
+
+
+
+
+    </>
+
+
   );
 }

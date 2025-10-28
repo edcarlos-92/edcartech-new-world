@@ -4,7 +4,7 @@ import MainMenu from '../../components/MainMenu'
 import { HumanDateTime } from '../../utils'
 import { useForm, SubmitHandler } from "react-hook-form";
 import SideFlexImgText from '../../components/SideFlexImgText'
-import { AnnotationIcon } from '@heroicons/react/outline'
+import { ChatBubbleLeftIcon as AnnotationIcon } from '@heroicons/react/24/outline'
 import { API_URL, getAllPostsWithSlug, getDetailPosts, refeshDetailPosts } from '../../lib/apolloGraphQl'
 import { useRouter } from 'next/router'
 import { CopyBlock, dracula } from 'react-code-blocks'
@@ -15,6 +15,7 @@ import { ApolloCache, ApolloQueryResult, DocumentNode, ObservableQuery, useMutat
 import useSWR from 'swr'
 
 import { Button, Loading, Spacer } from "@nextui-org/react";
+import { themeConfig } from '../../lib/themeConfig'
 
 interface IFormInput {
     id: string;
@@ -64,7 +65,7 @@ export default function SlugPost(props: any) {
             {post ?
 
 
-                <main>
+                <main className={themeConfig.backgrounds.main}>
 
                     <MainMenu />
 
@@ -290,23 +291,23 @@ export async function getStaticProps({ params, preview = false, previewData }:an
 
 export async function getStaticPaths() {
     const allPosts = await getAllPostsWithSlug()
-  
+
     console.log('allPosts Front End Edges :-->> ', allPosts.edges);
     console.log('allPosts Front End Nodes :-->> ', allPosts.node);
 
     return {
-      paths: allPosts.edges.map(({ node }:any) => `/posts/${node.slug}`) || [],
-    //   paths: allPosts.edges.map(({ slug }:any) => {
-    //     return {
-    //         params:{slug}
-    //     }
-    //   })
+        paths: allPosts.edges.map(({ node }: any) => `/posts/${node.slug}`) || [],
+        //   paths: allPosts.edges.map(({ slug }:any) => {
+        //     return {
+        //         params:{slug}
+        //     }
+        //   })
 
-      //fallback: true,
-      //fallback: 'blocking',
-     fallback: false,
+        //fallback: true,
+        //fallback: 'blocking',
+        fallback: false,
     }
-  }
+}
 
 
 

@@ -1,9 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, MoonIcon, XIcon } from '@heroicons/react/outline'
-import { LoginIcon } from '@heroicons/react/solid'
-import { AnnotationIcon } from '@heroicons/react/outline'
+import { Bars3Icon as MenuIcon, MoonIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline'
+import { UserIcon as LoginIcon } from '@heroicons/react/24/solid'
+import { ChatBubbleLeftIcon as AnnotationIcon } from '@heroicons/react/24/outline'
 
 import {navigation} from '../utils/appConst'
 import MainMenu from './MainMenu'

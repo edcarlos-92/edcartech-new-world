@@ -3,19 +3,19 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useCallback, useState } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, MoonIcon, XIcon } from '@heroicons/react/outline'
-import { LoginIcon } from '@heroicons/react/solid'
-import { AnnotationIcon } from '@heroicons/react/outline'
-import {navigation} from '../utils/appConst'
+import { Bars3Icon as MenuIcon, MoonIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline'
+import { UserIcon as LoginIcon } from '@heroicons/react/24/solid'
+import { ChatBubbleLeftIcon as AnnotationIcon } from '@heroicons/react/24/outline'
+import { navigation } from '../utils/appConst'
 import ThemeSwitcher from './ThemeSwitcher'
-import {useTheme} from 'next-themes'
+import { useTheme } from 'next-themes'
 import { useEventListener } from '../lib/hooks/useEventListener'
 
 import dynamic from 'next/dynamic';
 
-export default function MainMenu(props:any) {
+export default function MainMenu(props: any) {
 
-  const {leftTitle,rightTitle,Desc}=props
+  const { leftTitle, rightTitle, Desc } = props
 
   // const {theme, setTheme} = useTheme()
 
@@ -28,7 +28,7 @@ export default function MainMenu(props:any) {
   //   },
   //   { ssr: false }
   // );
-  
+
   // let contexTheme = window && window.localStorage.getItem('theme');
   // const [getTheme,setTheme] = useState(contexTheme);
   // const handler = useCallback(() => {
@@ -58,7 +58,7 @@ export default function MainMenu(props:any) {
                       alt=""
                     /> */}
 
-                {/* {
+                    {/* {
                   theme === 'dark' 
                 ?   //-no-down
                   <img className="h-8 w-auto sm:h-10" src="/edcartech-long-white.png" alt="" />                
@@ -66,11 +66,11 @@ export default function MainMenu(props:any) {
                   <img className="h-8 w-auto sm:h-10" src="/edcartech-long.png" alt="" />                
                 } */}
 
-                <img
-                  className="h-8 w-auto sm:h-10 edcartech-logo-type"
-                  //src="/edcartech-long-white.png"
-                  alt="EDCARTECH-LOGO"
-                />
+                    <img
+                      className="h-8 w-auto sm:h-10 edcartech-logo-type"
+                      //src="/edcartech-long-white.png"
+                      alt="EDCARTECH-LOGO"
+                    />
 
 
                   </a>
@@ -91,7 +91,7 @@ export default function MainMenu(props:any) {
               </div>
               <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 ">
                 <span className="inline-flex rounded-md shadow ">
-              
+
                   <a
                     href="/contact"
                     type="button"
@@ -99,17 +99,17 @@ export default function MainMenu(props:any) {
                   >
                     <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
                     <span>Contact Us</span>
-                  </a>   
+                  </a>
                 </span>
 
 
-                
-                <div className="flex-shrink-0 pl-3 ">
-                  <ThemeSwitcher/>
+
+                <div className="shrink-0 pl-3 ">
+                  <ThemeSwitcher />
                 </div>
 
 
-                 {/* <div className="flex-shrink-0 pl-3 ">
+                {/* <div className="flex-shrink-0 pl-3 ">
                     <button
                       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                       type="button"
@@ -165,20 +165,20 @@ export default function MainMenu(props:any) {
                     type="button"
                     //className="block w-full px-5 py-3 text-center font-medium text-indigo-800 bg-gray-50 hover:bg-gray-100"
                     className="relative inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    //className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  //className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-900 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 
                   >
-                      <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-                      <span>Contact Us</span>
-                  </a>   
+                    <AnnotationIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+                    <span>Contact Us</span>
+                  </a>
 
 
                   <a className="inline-flex items-right pl-10 ">
-                    <ThemeSwitcher/>
+                    <ThemeSwitcher />
                   </a>
                 </div>
-               
-                  {/* <a
+
+                {/* <a
                     href="/contact"
                     type="button"
                     //className="block w-full px-5 py-3 text-center font-medium text-indigo-800 bg-gray-50 hover:bg-gray-100"

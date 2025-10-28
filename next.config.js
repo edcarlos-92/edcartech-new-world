@@ -5,14 +5,12 @@ require('dotenv').config()
 module.exports = {
   reactStrictMode: true,
 
-  // Completely disable all Vercel services
-  experimental: {
-    instrumentationHook: false,
+  // Image optimization configuration
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-
-  // Disable all telemetry and analytics
-  telemetry: false,
-  analytics: false,
 
   // Disable webpack optimizations that might inject services
   webpack: (config, { isServer }) => {

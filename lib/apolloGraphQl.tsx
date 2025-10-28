@@ -4,9 +4,10 @@ import {
   ApolloProvider,
   useQuery,
   gql,
-  useMutation
+  useMutation,
+  createHttpLink
 } from "@apollo/client";
-import { Loading } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import ImageFragment from "./queries/fragments/image";
 import { ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY, PostFragment, POST_DETAILS_QUERY, SEARCHQUERY, TECH_TIPS_QUERY } from "./queries/fragments/post";
 
@@ -16,8 +17,12 @@ import { ALL_POST_WITH_SLUG_QUERY, CREATE_POST_COMMENT_QUERY, FETCH_EXAMPLEQUERY
 
 export const API_URL: any = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://cms.edcartech.com/graphql';
 
+const httpLink = createHttpLink({
+  uri: API_URL,
+});
+
 export const client = new ApolloClient({
-  uri: API_URL,//process.env.WORDPRESS_API_URL, //'https://cms.edcartech.com/graphql',
+  link: httpLink,
   cache: new InMemoryCache()
 });
 
@@ -72,12 +77,12 @@ export async function getAllPostsWithSlug() {
   } catch (error) {
     console.error('Error fetching posts with slug:', error);
     // Return a fallback structure that matches the expected format
-    return { 
+    return {
       edges: [
         { node: { slug: 'sample-post-1' } },
         { node: { slug: 'sample-post-2' } }
-      ], 
-      node: null 
+      ],
+      node: null
     };
   }
 }
@@ -98,14 +103,14 @@ export async function getDetailPosts(slug: any) {
       postId: 1,
       featuredImage: {
         node: {
-          sourceUrl: '/assets/images/aboutme/profilephoto.jpg'
+          sourceUrl: '/assets/images/aboutme/profilephoto.png'
         }
       },
       author: {
         node: {
           name: 'Sample Author',
           avatar: {
-            url: '/assets/images/aboutme/profilephoto.jpg'
+            url: '/assets/images/aboutme/profilephoto.png'
           }
         }
       },
@@ -179,7 +184,7 @@ export function GetSearchResultsUseQuery(keywords: any) {
   //fetchPolicy: 'network-only', // Doesn't check cache before making a network request
   if (keywords === "" || keywords === null) return 'No Records Found...';
   //if (loading) return 'Loading...'; <h1 className='text-blue-500'>Submitting...</h1>;
-  if (loading) return <div className='grid place-items-center h-screen' ><Loading size="xl">Loading...</Loading></div>;
+  if (loading) return <div className='grid place-items-center h-screen' ><Spinner size="lg">Loading...</Spinner></div>;
   if (error) return `Error! ${error.message}`;
   if (data) return data;
 }

@@ -2,22 +2,22 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
-  AnnotationIcon,
-  ChatAlt2Icon,
-  ChatAltIcon,
-  DocumentReportIcon,
+  ChatBubbleLeftIcon as AnnotationIcon,
+  ChatBubbleLeftRightIcon as ChatAlt2Icon,
+  ChatBubbleLeftRightIcon as ChatAltIcon,
+  DocumentChartBarIcon as DocumentReportIcon,
   HeartIcon,
   InboxIcon,
-  MenuIcon,
-  PencilAltIcon,
+  Bars3Icon as MenuIcon,
+  PencilIcon as PencilAltIcon,
   QuestionMarkCircleIcon,
-  ReplyIcon,
+  ArrowUturnLeftIcon as ReplyIcon,
   SparklesIcon,
   TrashIcon,
   UsersIcon,
-  XIcon,
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+  XMarkIcon as XIcon,
+} from '@heroicons/react/24/outline'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import ReachOutToUs from './ReachOutToUs'
 
 const solutions = [
@@ -118,7 +118,7 @@ const footerNavigation = {
     {
       name: 'Facebook',
       href: '#',
-      icon: (props:any) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -131,7 +131,7 @@ const footerNavigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props:any) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -144,7 +144,7 @@ const footerNavigation = {
     {
       name: 'Twitter',
       href: '#',
-      icon: (props:any) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
         </svg>
@@ -153,7 +153,7 @@ const footerNavigation = {
     {
       name: 'GitHub',
       href: '#',
-      icon: (props:any) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -166,7 +166,7 @@ const footerNavigation = {
     {
       name: 'Dribbble',
       href: '#',
-      icon: (props:any) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -179,14 +179,14 @@ const footerNavigation = {
   ],
 }
 
-function classNames(...classes:any) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Landing() {
   return (
     <div className="pt-10 font-sans">{/* bg-white */}
-     
+
 
       <main>
         {/* Hero section  */}
@@ -198,14 +198,14 @@ export default function Landing() {
                 <img
                   className="h-full w-full object-fill"
                   //className="h-full w-full object-cover"
-                //   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                //src="/assets/images/pages/1.png" 
-                src="/assets/images/pages/test.png" 
-                // src="/assets/images/pages/Ins.gif"
-                //src="/assets/images/pages/Home.png"
+                  //   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                  //src="/assets/images/pages/1.png" 
+                  src="/assets/images/pages/test.png"
+                  // src="/assets/images/pages/Ins.gif"
+                  //src="/assets/images/pages/Home.png"
 
-                //src="/edcartech-long.png"
-                alt="EDCARTECH IT SOLUTIONS"
+                  //src="/edcartech-long.png"
+                  alt="EDCARTECH IT SOLUTIONS"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-gray-900 mix-blend-multiply" />
               </div>
@@ -412,9 +412,9 @@ export default function Landing() {
               <div className="h-full xl:relative xl:col-start-2">
                 <img
                   className="h-full w-full object-fill opacity-25 xl:absolute xl:inset-0"
-                //   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                src="/assets/images/pages/Ins.gif"
-                alt="EDCARTECH Gif"
+                  //   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                  src="/assets/images/pages/Ins.gif"
+                  alt="EDCARTECH Gif"
                 />
                 <div
                   aria-hidden="true"
@@ -431,11 +431,11 @@ export default function Landing() {
                 </span>
               </h2>
               <p className="mt-3 text-3xl font-extrabold text-white">
-               We are commited to playing our part as your business grows.
-               </p>
+                We are commited to playing our part as your business grows.
+              </p>
               <p className="mt-5 text-lg text-gray-300">
-                So we really understand what it means for us to be involved as your business as it grows, 
-                Our developers and Team mates are ready and willing to help deliver their best to make sure 
+                So we really understand what it means for us to be involved as your business as it grows,
+                Our developers and Team mates are ready and willing to help deliver their best to make sure
                 as you have value for your investment.
               </p>
               <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
@@ -452,7 +452,7 @@ export default function Landing() {
           </div>
         </div>
       </main>
-        <ReachOutToUs/>
+      <ReachOutToUs />
     </div>
   )
 }
