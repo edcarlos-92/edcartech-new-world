@@ -206,8 +206,8 @@ export default function ContactPage() {
         </div> */}
 
         {/* Contact section */}
-        <section className="relative bg-white py-10" aria-labelledby="contact-heading">
-          <div className="absolute w-full h-1/2 bg-warm-gray-50" aria-hidden="true" />
+        <section className="relative py-10" aria-labelledby="contact-heading">
+          <div className="absolute w-full h-1/2 bg-warm-gray-50 dark:bg-gray-800" aria-hidden="true" />
           {/* Decorative dot pattern */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <svg
@@ -234,7 +234,7 @@ export default function ContactPage() {
             </svg>
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-white shadow-xl">
+            <div className="relative bg-white dark:bg-gray-800 shadow-xl">
               <h2 id="contact-heading" className="sr-only">
                 Contact Me
               </h2>
@@ -398,10 +398,10 @@ export default function ContactPage() {
 
                 {/* Contact form */}
                 <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                  <h3 className="text-lg font-medium text-warm-gray-900">Send us a message</h3>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">Send us a message</h3>
                   <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                     <div>
-                      <label htmlFor="first-name" className="block text-sm font-medium text-warm-gray-900">
+                      <label htmlFor="first-name" className={themeConfig.form.label}>
                         First name
                       </label>
                       <div className="mt-1">
@@ -411,12 +411,12 @@ export default function ContactPage() {
                           id="first-name"
                           required
                           autoComplete="given-name"
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                         />
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="last-name" className="block text-sm font-medium text-warm-gray-900">
+                      <label htmlFor="last-name" className={themeConfig.form.label}>
                         Last name
                       </label>
                       <div className="mt-1">
@@ -426,12 +426,12 @@ export default function ContactPage() {
                           id="last-name"
                           required
                           autoComplete="family-name"
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                         />
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-warm-gray-900">
+                      <label htmlFor="email" className={themeConfig.form.label}>
                         Email
                       </label>
                       <div className="mt-1">
@@ -441,16 +441,16 @@ export default function ContactPage() {
                           type="email"
                           required
                           autoComplete="email"
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                         />
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between">
-                        <label htmlFor="phone" className="block text-sm font-medium text-warm-gray-900">
+                        <label htmlFor="phone" className={themeConfig.form.label}>
                           Phone
                         </label>
-                        <span id="phone-optional" className="text-sm text-warm-gray-500">
+                        <span id="phone-optional" className={themeConfig.form.help}>
                           Optional
                         </span>
                       </div>
@@ -460,13 +460,13 @@ export default function ContactPage() {
                           name="phone"
                           id="phone"
                           autoComplete="tel"
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                           aria-describedby="phone-optional"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-2">
-                      <label htmlFor="subject" className="block text-sm font-medium text-warm-gray-900">
+                      <label htmlFor="subject" className={themeConfig.form.label}>
                         Subject
                       </label>
                       <div className="mt-1">
@@ -475,16 +475,16 @@ export default function ContactPage() {
                           name="subject"
                           id="subject"
                           required
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-2">
                       <div className="flex justify-between">
-                        <label htmlFor="message" className="block text-sm font-medium text-warm-gray-900">
+                        <label htmlFor="message" className={themeConfig.form.label}>
                           Message
                         </label>
-                        <span id="message-max" className="text-sm text-warm-gray-500">
+                        <span id="message-max" className={themeConfig.form.help}>
                           Max. 500 characters
                         </span>
                       </div>
@@ -494,7 +494,7 @@ export default function ContactPage() {
                           name="message"
                           rows={4}
                           required
-                          className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 rounded-md"
+                          className={themeConfig.form.input}
                           aria-describedby="message-max"
                           defaultValue={''}
                         />
@@ -502,10 +502,10 @@ export default function ContactPage() {
                     </div>
                     <div className="sm:col-span-2 sm:flex sm:justify-end">
                       {notice && (
-                        <p className="sm:mr-4 text-sm text-green-600">{notice}</p>
+                        <p className="sm:mr-4 text-sm text-green-600 dark:text-green-400">{notice}</p>
                       )}
                       {error && (
-                        <p className="sm:mr-4 text-sm text-red-600">{error}</p>
+                        <p className="sm:mr-4 text-sm text-red-600 dark:text-red-400">{error}</p>
                       )}
                       <button
                         type="submit"

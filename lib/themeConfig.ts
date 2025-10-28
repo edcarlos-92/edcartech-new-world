@@ -2,11 +2,20 @@
 export const themeConfig = {
   // Background colors
   backgrounds: {
-    main: 'min-h-screen', // Uses default Tailwind background system
+    main: 'min-h-screen bg-white dark:bg-gray-900', // App-wide page background
+    footer: 'bg-white dark:bg-[#111]', // Footer background - darker than gray-900
     section: 'py-20', // Standard section padding
     card: 'bg-white/50 dark:bg-white/5 backdrop-blur-sm rounded-lg', // Consistent card styling
     cardHover:
       'hover:bg-white/70 dark:hover:bg-white/10 transition-all duration-300', // Card hover effects
+  },
+
+  // Shared form styles
+  form: {
+    label: 'block text-sm font-medium text-gray-900 dark:text-gray-100',
+    help: 'text-sm text-gray-500 dark:text-gray-400',
+    input:
+      'py-3 px-4 block w-full shadow-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 dark:border-white/20 rounded-md',
   },
 
   // Text colors

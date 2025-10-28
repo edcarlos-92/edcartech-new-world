@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { themeConfig, cn } from "../../../lib/themeConfig";
-
+import CenterHeroHeader from "../../CenterHero";
 export default function Portfolio() {
     const router = useRouter();
     const { theme } = useTheme();
@@ -66,11 +66,22 @@ export default function Portfolio() {
     return (
         <div className={themeConfig.backgrounds.main}>
 
-            <div className="relative mt-20" style={{ marginBottom: '-150px' }}>
-                <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block">CARLOS SEMEHO EDORH</span>
-                </h1>
+
+            <div className="relative overflow-hidden font-sans" style={{ marginBottom: '-200px', marginTop: '60px' }}>
+                <div className="relative pb-6">
+                    <main className="mx-auto max-w-7xl px-4 sm:mt-20">
+                        <div className="text-center ">
+                            <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">
+                                <span className="block xl:inline">CARLOS SEMEHO</span>{' '}
+                                <span className="block text-indigo-800 xl:inline">EDORH</span>
+                            </h1>
+
+                        </div>
+                    </main>
+                </div>
             </div>
+
+
 
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -119,7 +130,7 @@ export default function Portfolio() {
 
                                 <Button
                                     className="group relative px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                                    onClick={() => window.open('/assets/images/aboutme/_resume.pdf', '_blank')}
+                                    onClick={() => window.open('/assets/images/aboutme/_resume_.pdf', '_blank')}
                                     style={{
                                         background: theme === 'dark'
                                             ? 'linear-gradient(#1f2937, #1f2937) padding-box, linear-gradient(315deg, #3b82f6, #9333ea) border-box'
