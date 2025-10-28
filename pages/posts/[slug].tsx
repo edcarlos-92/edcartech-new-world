@@ -45,8 +45,33 @@ export default function SlugPost(props: any) {
 
 
 
-    const refetchDetailPost = useQuery(POST_DETAILS_QUERY, { variables: { 'id': post.slug }, });
-    post = refetchDetailPost?.data?.post
+    const refetchDetailPost = useQuery(POST_DETAILS_QUERY, { 
+        variables: { 'id': post?.slug || '' }, 
+        skip: !post?.slug,
+        errorPolicy: 'all'
+    });
+    post = refetchDetailPost?.data?.post || post
+
+    // Handle case where post is null
+    if (!post) {
+        return (
+            <main className={themeConfig.backgrounds.main}>
+                <MainMenu />
+                <div className="max-w-3xl mx-auto p-5 text-center">
+                    <h1 className="text-4xl mb-5">Post Not Found</h1>
+                    <p className="text-gray-600 dark:text-gray-400 mb-5">
+                        The post you're looking for doesn't exist or has been removed.
+                    </p>
+                    <button 
+                        onClick={() => router.push('/blog')}
+                        className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                    >
+                        Back to Blog
+                    </button>
+                </div>
+            </main>
+        );
+    }
     //console.log(` New Post detailPost`, post)
 
 
@@ -312,26 +337,34 @@ export async function getStaticPaths() {
 
 //export async function getServerSideProps({ params }:any) {
 export async function getStaticProps({ params }: any) {
+    try {
+        //console.log('getStaticProps params :-->> ', params);
+        //console.log('REQUEST PARAM :-->> ', params.slug);
 
-    //console.log('getStaticProps params :-->> ', params);
-    //console.log('REQUEST PARAM :-->> ', params.slug);
+        const postResult = await getDetailPosts(params.slug);
+        //const post = JSON.stringify(postResult.nodes);
+        const post = postResult;//postResult.nodes;
+        //console.log('RESPONSE NODE :-->> ', post);
 
-    const postResult = await getDetailPosts(params.slug);
-    //const post = JSON.stringify(postResult.nodes);
-    const post = postResult;//postResult.nodes;
-    //console.log('RESPONSE NODE :-->> ', post);
+        if (!post) {
+            return {
+                notFound: true,
+            }
+        }
 
-    return {
-        props: {
-            post
-        },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
-        //revalidate: 10, // In seconds
-        //{
-        //post: data.post,
-        //posts: data.posts,
-        //},
+        return {
+            props: {
+                post
+            },
+            // Next.js will attempt to re-generate the page:
+            // - When a request comes in
+            // - At most once every 10 seconds
+            revalidate: 10, // In seconds
+        }
+    } catch (error) {
+        console.error('Error fetching post:', error);
+        return {
+            notFound: true,
+        }
     }
 }
