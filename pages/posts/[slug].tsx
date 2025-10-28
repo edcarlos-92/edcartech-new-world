@@ -14,7 +14,7 @@ import { ApolloCache, ApolloQueryResult, DocumentNode, ObservableQuery, useMutat
 
 import useSWR from 'swr'
 
-import { Button, Loading, Spacer } from "@nextui-org/react";
+import { Button, Spacer, Spinner } from "@nextui-org/react";
 import { themeConfig } from '../../lib/themeConfig'
 
 interface IFormInput {
@@ -54,7 +54,7 @@ export default function SlugPost(props: any) {
     const [onsubmit, { data, loading, error }]: any = useMutation(CREATE_POST_COMMENT_QUERY, { variables: { 'id': parseInt(id), 'name': name, 'email': email, 'comment': comment }, });
     //console.log(`onsubmit Data body comment`,comment)
     //if (loading) return <h1 className=' grid place-items-center h-50 text-blue-500'>Submitting...</h1>;
-    if (loading) return <div className='grid place-items-center h-screen' ><Loading size="xl">Submitting...</Loading> </div>;
+    if (loading) return <div className='grid place-items-center h-screen' ><Spinner size="lg">Submitting...</Spinner> </div>;
     if (error) return `Submission error! ${error.message}`;
     //console.log(`Data To be submitted`,data)
 
@@ -262,7 +262,7 @@ export default function SlugPost(props: any) {
 
 
 
-                : <div className='grid place-items-center h-screen' ><Loading size="xl">Loading...</Loading> </div>}
+                : <div className='grid place-items-center h-screen' ><Spinner size="lg">Loading...</Spinner> </div>}
 
 
 

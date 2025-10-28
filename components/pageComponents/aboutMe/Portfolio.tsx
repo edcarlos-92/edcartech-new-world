@@ -15,21 +15,21 @@ export default function Portfolio() {
     const [isDeleting, setIsDeleting] = useState(false);
     const [textIndex, setTextIndex] = useState(0);
 
-    const typingTexts = [
-        "Full Stack Development",
-        "Software Engineering",
-        "React/Next.js Development",
-        "Mobile App Development",
-        "Enterprise Solutions Architecture",
-        "Computer Science Graduate Student"
-    ];
-
     useEffect(() => {
         setMounted(true);
     }, []);
 
     useEffect(() => {
         if (!mounted) return;
+
+        const typingTexts = [
+            "Full Stack Development",
+            "Software Engineering",
+            "React/Next.js Development",
+            "Mobile App Development",
+            "Enterprise Solutions Architecture",
+            "Computer Science Graduate Student"
+        ];
 
         const timeout = setTimeout(() => {
             const current = typingTexts[textIndex];
@@ -51,7 +51,7 @@ export default function Portfolio() {
         }, isDeleting ? 50 : 100);
 
         return () => clearTimeout(timeout);
-    }, [currentText, isDeleting, textIndex, mounted, typingTexts]);
+    }, [currentText, isDeleting, textIndex, mounted]);
 
     if (!mounted) {
         return (
