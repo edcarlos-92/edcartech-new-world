@@ -1,40 +1,48 @@
-# Next.js + Tailwind CSS Example
+## Edcartech.com
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+A modernized portfolio and content site built with the latest Next.js and React, keeping the original look while fixing legacy issues and improving performance, DX, and consistency.
 
-## Preview
+### Tech Stack
+- Next.js 15, React 19, TypeScript 5
+- Tailwind CSS 3 (dark mode via class)
+- Headless UI, Heroicons v2
+- NextUI (select components), Framer Motion peer
+- Apollo Client v3 (GraphQL)
+- Sanity (content), Next.js API routes
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+### Highlights
+- Centralized theme config in `lib/themeConfig.ts` (backgrounds, typography, buttons, shared form styles)
+- Updated all legacy imports/APIs (Heroicons v2, NextUI changes, Tailwind utilities)
+- Redesigned Portfolio page with typing effects and gradient-border buttons
+- Contact form posts to `/api/contact` and uses Nodemailer (SMTP)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
+### Setup
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+pnpm install
+pnpm run dev
+# http://localhost:3000
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Environment
+Create `.env.local` for email sending:
+```
+SMTP_HOST=your_smtp_host
+SMTP_PORT=587
+SMTP_USER=your_username
+SMTP_PASS=your_password
+CONTACT_TO=recipient@yourdomain.com
+CONTACT_FROM=no-reply@yourdomain.com
+```
 
-https://code-boxx.com/display-code-snippets-html/
+### Theming
+- Global page background: `themeConfig.backgrounds.main`
+- Shared form styles: `themeConfig.form`
+- Dark mode via `next-themes` and Tailwind `dark:` variants
 
-      fontFamily: ["Trebuchet MS","Helvetica Neue","Helvetica","Roboto", "Arial",'sans-serif','Poppins'].join(','),//source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+### Deployment
+Target: Vercel. Set environment variables in the project settings before building.
 
-
-
-https://www.apollographql.com/docs/react/data/mutations/
-https://www.wpgraphql.com/docs/comments/
-https://react-hook-form.com/   `OR` https://www.brudi.com/en/design/guide/introduction
-https://app.graphcms.com/
+### License
+MIT — © Edcartech
 
 
