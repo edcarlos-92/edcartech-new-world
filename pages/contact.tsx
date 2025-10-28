@@ -24,7 +24,7 @@
   }
   ```
 */
-import { Fragment } from 'react'
+import { Fragment, useCallback, useState } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { EnvelopeIcon as MailIcon, Bars3Icon as MenuIcon, PhoneIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline'
 import CenterHeroHeader from '../components/CenterHero'
@@ -143,6 +143,43 @@ const heroInfo = {
 }
 
 export default function ContactPage() {
+  const [submitting, setSubmitting] = useState(false)
+  const [notice, setNotice] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setNotice(null)
+    setError(null)
+    try {
+      const form = e.currentTarget
+      const data = new FormData(form)
+      const payload = {
+        firstName: String(data.get('firstName') || ''),
+        lastName: String(data.get('lastName') || ''),
+        email: String(data.get('email') || ''),
+        phone: String(data.get('phone') || ''),
+        subject: String(data.get('subject') || ''),
+        message: String(data.get('message') || ''),
+      }
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(json?.message || 'Failed to send')
+      setNotice('Message sent. I will get back to you shortly.')
+      form.reset()
+    } catch (err: any) {
+      setError(err?.message || 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
+  }, [])
   return (
     <div className={themeConfig.backgrounds.main}>
 
@@ -362,7 +399,7 @@ export default function ContactPage() {
                 {/* Contact form */}
                 <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
                   <h3 className="text-lg font-medium text-warm-gray-900">Send us a message</h3>
-                  <form action="#" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                  <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                     <div>
                       <label htmlFor="first-name" className="block text-sm font-medium text-warm-gray-900">
                         First name
@@ -370,8 +407,9 @@ export default function ContactPage() {
                       <div className="mt-1">
                         <input
                           type="text"
-                          name="first-name"
+                          name="firstName"
                           id="first-name"
+                          required
                           autoComplete="given-name"
                           className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                         />
@@ -384,8 +422,9 @@ export default function ContactPage() {
                       <div className="mt-1">
                         <input
                           type="text"
-                          name="last-name"
+                          name="lastName"
                           id="last-name"
+                          required
                           autoComplete="family-name"
                           className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                         />
@@ -400,6 +439,7 @@ export default function ContactPage() {
                           id="email"
                           name="email"
                           type="email"
+                          required
                           autoComplete="email"
                           className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                         />
@@ -434,6 +474,7 @@ export default function ContactPage() {
                           type="text"
                           name="subject"
                           id="subject"
+                          required
                           className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                         />
                       </div>
@@ -452,6 +493,7 @@ export default function ContactPage() {
                           id="message"
                           name="message"
                           rows={4}
+                          required
                           className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 rounded-md"
                           aria-describedby="message-max"
                           defaultValue={''}
@@ -459,11 +501,18 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="sm:col-span-2 sm:flex sm:justify-end">
+                      {notice && (
+                        <p className="sm:mr-4 text-sm text-green-600">{notice}</p>
+                      )}
+                      {error && (
+                        <p className="sm:mr-4 text-sm text-red-600">{error}</p>
+                      )}
                       <button
                         type="submit"
-                        className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:w-auto"
+                        disabled={submitting}
+                        className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:opacity-60 sm:w-auto"
                       >
-                        Submit
+                        {submitting ? 'Sending…' : 'Submit'}
                       </button>
                     </div>
                   </form>
