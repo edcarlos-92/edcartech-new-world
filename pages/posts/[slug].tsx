@@ -52,7 +52,13 @@ export default function SlugPost(props: any) {
     });
     post = refetchDetailPost?.data?.post || post
 
-    // Handle case where post is null
+    //console.log(` New Post detailPost`, post)
+
+
+    const { id, name, email, comment } = getValues();
+    const [onsubmit, { data, loading, error }]: any = useMutation(CREATE_POST_COMMENT_QUERY, { variables: { 'id': parseInt(id), 'name': name, 'email': email, 'comment': comment }, });
+
+    // Handle case where post is null (after hooks have been called)
     if (!post) {
         return (
             <main className={themeConfig.backgrounds.main}>
@@ -72,11 +78,7 @@ export default function SlugPost(props: any) {
             </main>
         );
     }
-    //console.log(` New Post detailPost`, post)
 
-
-    const { id, name, email, comment } = getValues();
-    const [onsubmit, { data, loading, error }]: any = useMutation(CREATE_POST_COMMENT_QUERY, { variables: { 'id': parseInt(id), 'name': name, 'email': email, 'comment': comment }, });
     //console.log(`onsubmit Data body comment`,comment)
     //if (loading) return <h1 className=' grid place-items-center h-50 text-blue-500'>Submitting...</h1>;
     if (loading) return <div className='grid place-items-center h-screen' ><Spinner size="lg">Submitting...</Spinner> </div>;
