@@ -68,7 +68,7 @@ export default function Portfolio() {
 
             <div className="relative mt-20" style={{ marginBottom: '-150px' }}>
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block text-white">CARLOS SEMEHO EDORH</span>
+                    <span className="block">CARLOS SEMEHO EDORH</span>
                 </h1>
             </div>
 
