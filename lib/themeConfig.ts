@@ -14,7 +14,7 @@ export const themeConfig = {
     label: 'block text-sm font-medium text-gray-900 dark:text-gray-100',
     help: 'text-sm text-gray-500 dark:text-gray-400',
     input:
-      'py-3 px-4 block w-full shadow-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 dark:border-white/20 rounded-md',
+      'py-3 px-4 block w-full shadow-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 dark:border-white/20 rounded-md',
   },
 
   // Text colors

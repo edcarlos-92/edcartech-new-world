@@ -114,3 +114,34 @@ html.light body img.edcartech-logo-type {
 html.dark body img.edcartech-logo-type {
     content: url("../public/edcartech-long-white.png");
 }
+
+/* Gallery button animations */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes attention {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.attention-button {
+    animation: blink 1.5s ease-in-out infinite alternate, attention 2s ease-in-out infinite;
+}

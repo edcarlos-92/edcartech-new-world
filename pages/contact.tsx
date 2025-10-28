@@ -341,8 +341,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-medium text-white">Contact information</h3>
                   <p className="mt-6 text-base text-teal-50 max-w-3xl">
-                    Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
-                    lacus arcu.
+                    Ready to bring your ideas to life? Let's discuss your project and see how we can work together to create something amazing.
                   </p>
                   <dl className="mt-8 space-y-6">
                     <dt>
@@ -362,19 +361,19 @@ export default function ContactPage() {
                   </dl>
                   <ul role="list" className="mt-8 flex space-x-12">
                     <li>
-                      <a className="text-teal-200 hover:text-teal-100" href="#">
-                        <span className="sr-only">Facebook</span>
+                      <a className="text-teal-200 hover:text-teal-100" href="https://www.linkedin.com/in/carlos-semeho-edorh-7140821b2/" target="_blank" rel="noreferrer">
+                        <span className="sr-only">LinkedIn</span>
                         <svg className="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                           <path
                             fillRule="evenodd"
-                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 c0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
                             clipRule="evenodd"
                           />
                         </svg>
                       </a>
                     </li>
                     <li>
-                      <a className="text-teal-200 hover:text-teal-100" href="#">
+                      <a className="text-teal-200 hover:text-teal-100" href="https://github.com/edcarlos-92" target="_blank" rel="noreferrer">
                         <span className="sr-only">GitHub</span>
                         <svg className="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                           <path
@@ -386,10 +385,34 @@ export default function ContactPage() {
                       </a>
                     </li>
                     <li>
-                      <a className="text-teal-200 hover:text-teal-100" href="#">
+                      <a className="text-teal-200 hover:text-teal-100" href="https://twitter.com/edorhcarlos1" target="_blank" rel="noreferrer">
                         <span className="sr-only">Twitter</span>
                         <svg className="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="text-teal-200 hover:text-teal-100" href="https://www.facebook.com/Edcartech-324157191256300/" target="_blank" rel="noreferrer">
+                        <span className="sr-only">Facebook</span>
+                        <svg className="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            fillRule="evenodd"
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="text-teal-200 hover:text-teal-100" href="https://www.youtube.com/channel/UCaJ-S9PSX4opldPWVC8ZERA" target="_blank" rel="noreferrer">
+                        <span className="sr-only">YouTube</span>
+                        <svg className="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            fillRule="evenodd"
+                            d="M9.522,15.553 L9.52125,8.80975 L16.00575,12.193 L9.522,15.553 Z M23.76,7.64125 C23.76,7.64125 23.52525,5.9875 22.806,5.25925 C21.89325,4.303 20.87025,4.2985 20.4015,4.243 C17.043,4 12.00525,4 12.00525,4 L11.99475,4 C11.99475,4 6.957,4 3.5985,4.243 C3.129,4.2985 2.10675,4.303 1.19325,5.25925 C0.474,5.9875 0.24,7.64125 0.24,7.64125 C0.24,7.64125 0,9.58375 0,11.5255 L0,13.3465 C0,15.289 0.24,17.23075 0.24,17.23075 C0.24,17.23075 0.474,18.8845 1.19325,19.61275 C2.10675,20.569 3.306,20.539 3.84,20.63875 C5.76,20.82325 12,20.88025 12,20.88025 C12,20.88025 17.043,20.87275 20.4015,20.62975 C20.87025,20.5735 21.89325,20.569 22.806,19.61275 C23.52525,18.8845 23.76,17.23075 23.76,17.23075 C23.76,17.23075 24,15.289 24,13.3465 L24,11.5255 C24,9.58375 23.76,7.64125 23.76,7.64125 L23.76,7.64125 Z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </a>
                     </li>

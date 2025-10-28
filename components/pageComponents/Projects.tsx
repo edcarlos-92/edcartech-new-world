@@ -37,11 +37,18 @@ export default function Projects() {
         </div>
         <div className="relative flex justify-center">
           <span className="px-3 text-xl font-bold text-green-700 pt-5"> Early Projects ( 2016 - 2019 )  </span>
-          <br />
-          <br />
+
           <span className="mt-2 text-center text-sm text-gray-600 dark:text-gray-300 pt-4">
-            Please Follow my newer works on <a className="underline hover:text-green-700" href="https://github.com/edcarlos-92" target="_blank" rel="noreferrer">GitHub</a>.
+            Visit my <a className="underline hover:text-green-700" href="/gallery" target="_blank" rel="noreferrer">Project Gallery</a> for latest projects {` - `}
           </span>
+
+
+          <span className="mt-2 text-center text-sm text-gray-600 dark:text-gray-300 pt-4">
+            {` -`} or my <a className="underline hover:text-green-700" href="https://github.com/edcarlos-92" target="_blank" rel="noreferrer">GitHub </a>
+          </span>
+
+
+
 
         </div>
 
