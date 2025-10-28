@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
           <meta name='theme-color' content='#0A8FDC' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
-          <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
+
 
           <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
@@ -73,7 +73,7 @@ export default class MyDocument extends Document {
 
 
         </Head>
-        <body className="dark:bg-gray-800">
+        <body>
           <Main />
           <div id='root' />
           <NextScript />
