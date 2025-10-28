@@ -4,7 +4,7 @@ import '../styles/tailwind.css'
 import '../styles/about.css'
 import '../styles/portfolio.css'
 //import 'flowbite';
-import {ThemeProvider} from 'next-themes'
+import { ThemeProvider } from 'next-themes'
 import { ApolloProvider } from '@apollo/client'
 
 
@@ -20,7 +20,7 @@ import type { AppProps } from 'next/app'
 import { client } from '../lib/apolloGraphQl'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return(
+  return (
     <>
       <ApolloProvider client={client} >
         <ThemeProvider attribute="class">
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ApolloProvider>
     </>
   )
-  
+
 }
 
 export default MyApp

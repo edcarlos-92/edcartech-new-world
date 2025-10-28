@@ -2,8 +2,7 @@
 export const themeConfig = {
   // Background colors
   backgrounds: {
-    main: 'min-h-screen bg-white dark:bg-gray-900', // App-wide page background
-    footer: 'bg-white dark:bg-[#111]', // Footer background - darker than gray-900
+    main: 'min-h-screen', // Uses default Tailwind background system
     section: 'py-20', // Standard section padding
     card: 'bg-white/50 dark:bg-white/5 backdrop-blur-sm rounded-lg', // Consistent card styling
     cardHover:

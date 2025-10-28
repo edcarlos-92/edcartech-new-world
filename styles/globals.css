@@ -3,28 +3,31 @@
 @tailwind utilities;
 
 /* "Trebuchet MS","Poppins","Arial","Roboto","Helvetica","Helvetica Neue","Monaco","Trebuchet MS"; */
-body{
-     font-family : "Trebuchet MS";/*Georgia   Bitstream Charter  serif  Trebuchet MS   Poppins*/
+body {
+    font-family: "Trebuchet MS";
+    /*Georgia   Bitstream Charter  serif  Trebuchet MS   Poppins*/
 }
 
-div.text-center{
+div.text-center {
     margin-top: -40px;
 }
-strong{
+
+strong {
     font-weight: bolder;
     font-size: larger;
     /* color:#111827; */
 }
-p a{
-    color:cornflowerblue;
+
+p a {
+    color: cornflowerblue;
 }
 
 
 
-    /* svg#s-icon {
+/* svg#s-icon {
         fill: white;
     } */
-    /* .logo-wrapper svg path{
+/* .logo-wrapper svg path{
         fill: green !important;
       } */
 
@@ -34,15 +37,15 @@ p a{
 
 
 .microlight {
-    
+
     /* background-color : #C4E4E8;
     color            : #052C36; */
     /* background-color : #282a36; */
     /* background-color: #1F2F33; */
     background-color: #111827;
     color: #B5F7FF;
-    border-radius:3px;
-    text-shadow: 0px 0px 2px rgba(181, 248, 255, 0.418),0px 0px 2px rgba(181, 248, 255, 0.226);
+    border-radius: 3px;
+    text-shadow: 0px 0px 2px rgba(181, 248, 255, 0.418), 0px 0px 2px rgba(181, 248, 255, 0.226);
     border: 2px solid #3C575B;
     font-size: large !important;
     line-height: 1.4;
@@ -51,7 +54,7 @@ p a{
     /* white-space: normal; */
     /* word-break: break-all; */
     /* overflow-wrap: break-word !important; */
-    
+
 }
 
 div.microlight {
@@ -68,40 +71,46 @@ div.microlight {
     /* white-space:normal; */
 
 }
-.portfolio-top{
+
+.portfolio-top {
     margin-bottom: -250px;
 }
-.portfolio-about-me{
+
+.portfolio-about-me {
     margin-top: -130px;
 }
 
-.portfolio-my-services{
+.portfolio-my-services {
     margin-top: -80px;
 }
-.portfolio-my-skills{
+
+.portfolio-my-skills {
     margin-top: -90px;
 }
+
 @media (max-width: 500px) {
-    .portfolio-about-me{
+    .portfolio-about-me {
         margin-top: -100px;
     }
+
     /* .portfolio-my-skills{
         margin-top: -100px;
     } */
 
-    .portfolio-my-services{
+    .portfolio-my-services {
         margin-top: -50px;
     }
 }
 
-.projectImg{
+.projectImg {
     /* width:600px; */
-    height:210px;
+    height: 210px;
 }
 
-html.light body img.edcartech-logo-type{
-    content:url("../public/edcartech-long.png");
+html.light body img.edcartech-logo-type {
+    content: url("../public/edcartech-long.png");
 }
-html.dark body img.edcartech-logo-type{
-    content:url("../public/edcartech-long-white.png");
+
+html.dark body img.edcartech-logo-type {
+    content: url("../public/edcartech-long-white.png");
 }
