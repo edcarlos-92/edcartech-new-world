@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ApolloProvider client={client} >
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="edcartech-theme-v2">
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
