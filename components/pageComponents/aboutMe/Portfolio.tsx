@@ -182,9 +182,9 @@ export default function Portfolio() {
                         <div>
                             <h3 className={cn("text-2xl font-bold mb-6", themeConfig.text.accent)}>WHO IS CARLOS</h3>
                             <p className={cn(themeConfig.typography.body, "mb-6")}>
-                                A passionate Full Stack Developer with over 7 years of experience building enterprise-level applications.
+                                A passionate Full Stack Developer with 5+ years of experience building enterprise-level applications.
                                 Currently pursuing my Master's in Computer Science at Northeastern University with a focus on
-                                Intelligence and Modeling/Simulations.
+                                software Engineering and Data Mining
                             </p>
                             <p className={cn(themeConfig.typography.body, "mb-6")}>
                                 I specialize in JavaScript, React, Next.js, Node.js, and have extensive experience with
@@ -198,7 +198,7 @@ export default function Portfolio() {
                                 </div>
                                 <div className={cn("flex items-center gap-2", themeConfig.text.accentPurple)}>
                                     <BriefcaseIcon className="w-5 h-5" />
-                                    <span>7+ Years Experience</span>
+                                    <span>5+ Years Experience</span>
                                 </div>
                             </div>
                         </div>
