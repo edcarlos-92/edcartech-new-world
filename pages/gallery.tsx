@@ -1,23 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import MainMenu from '../components/MainMenu'
 import Footer from '../components/Footer'
 import { themeConfig } from '../lib/themeConfig'
 
 export default function GalleryPage() {
-   const [isGalleryLoaded, setIsGalleryLoaded] = useState(false)
    const galleryUrl = 'https://www.photo-pick.com/online/8a4qSf09.link'
 
-   // If the embedded gallery hasn't loaded after 5 seconds, redirect visitor
+   // After 5 seconds on this page, always redirect visitor to the external gallery
    useEffect(() => {
       const timer = setTimeout(() => {
-         if (!isGalleryLoaded && typeof window !== 'undefined') {
+         if (typeof window !== 'undefined') {
             window.location.href = galleryUrl
          }
       }, 5000)
 
       return () => clearTimeout(timer)
-   }, [isGalleryLoaded, galleryUrl])
+   }, [galleryUrl])
 
    return (
       <div className={themeConfig.backgrounds.main}>
@@ -72,7 +71,6 @@ export default function GalleryPage() {
                         type="text/html"
                         className="w-full h-full border-0"
                         title="Project Gallery"
-                        onLoad={() => setIsGalleryLoaded(true)}
                      >
                         {/* Fallback to embed tag */}
                         <embed
@@ -80,7 +78,6 @@ export default function GalleryPage() {
                            type="text/html"
                            className="w-full h-full border-0"
                            title="Project Gallery"
-                           onLoad={() => setIsGalleryLoaded(true)}
                         />
                         {/* Final fallback to iframe */}
                         <iframe
@@ -89,7 +86,6 @@ export default function GalleryPage() {
                            title="Project Gallery"
                            allowFullScreen
                            loading="lazy"
-                           onLoad={() => setIsGalleryLoaded(true)}
                         />
                      </object>
                   </div>
