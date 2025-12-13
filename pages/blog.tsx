@@ -37,13 +37,13 @@ export default function Blog(posts: any) {
 
 export async function getServerSideProps() {
   //export async function getStaticProps() {
-    const posts = await getAllTechTipsPosts();
-    //console.log('result :-->> ', posts);
-    return {
-      props:posts,
-      // Next.js will attempt to re-generate the page:
+  const posts = await getAllTechTipsPosts();
+  //console.log('result :-->> ', posts);
+  return {
+    props: posts,
+    // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
     //revalidate: 10, // In seconds
-    }
+  }
 }

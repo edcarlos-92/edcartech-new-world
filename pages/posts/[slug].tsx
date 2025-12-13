@@ -290,23 +290,23 @@ export async function getStaticProps({ params, preview = false, previewData }:an
 
 export async function getStaticPaths() {
     const allPosts = await getAllPostsWithSlug()
-  
+
     console.log('allPosts Front End Edges :-->> ', allPosts.edges);
     console.log('allPosts Front End Nodes :-->> ', allPosts.node);
 
     return {
-      paths: allPosts.edges.map(({ node }:any) => `/posts/${node.slug}`) || [],
-    //   paths: allPosts.edges.map(({ slug }:any) => {
-    //     return {
-    //         params:{slug}
-    //     }
-    //   })
+        paths: allPosts.edges.map(({ node }: any) => `/posts/${node.slug}`) || [],
+        //   paths: allPosts.edges.map(({ slug }:any) => {
+        //     return {
+        //         params:{slug}
+        //     }
+        //   })
 
-      //fallback: true,
-      //fallback: 'blocking',
-     fallback: false,
+        //fallback: true,
+        //fallback: 'blocking',
+        fallback: false,
     }
-  }
+}
 
 
 
