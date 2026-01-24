@@ -84,10 +84,10 @@ const features = [
   },
 ]
 const metrics = [
-  { id: 1, stat: '10+', emphasis: 'Companies', rest: 'are involved with us as we help them our skills' },
-  { id: 2, stat: '3', emphasis: 'Countries', rest: 'are where we currently help and offer our services' },
-  { id: 3, stat: '98%', emphasis: 'Customer satisfaction', rest: 'review about our services' },
-  { id: 4, stat: 'Many', emphasis: 'Issues resolved', rest: 'as far as customer support is our priority' },
+  { id: 1, stat: '10+', emphasis: 'Companies', rest: 'are involved with us as we help them with our skills' },
+  { id: 2, stat: '3', emphasis: 'Countries', rest: 'where we currently help and offer our services' },
+  { id: 3, stat: '98%', emphasis: 'Customer satisfaction', rest: 'customer reviews about our services' },
+  { id: 4, stat: 'Many', emphasis: 'Issues resolved', rest: 'as customer support is our priority' },
 ]
 const footerNavigation = {
   solutions: [
@@ -211,11 +211,11 @@ export default function Landing() {
               </div>
               <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                  <span className="block text-white">At EDCARTECH, We bring</span>
-                  <span className="block text-indigo-200">you much closer to Technology</span>
+                  <span className="block text-white">Transforming Businesses</span>
+                  <span className="block text-indigo-200">Through Innovative Technology Solutions</span>
                 </h1>
                 <p className="mt-2 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
-                  The future is truly now, never wait to lag behind
+                  Empowering your digital transformation with cutting-edge software development and IT expertise
                 </p>
                 <div className="mt-20 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                   <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
@@ -431,12 +431,12 @@ export default function Landing() {
                 </span>
               </h2>
               <p className="mt-3 text-3xl font-extrabold text-white">
-                We are commited to playing our part as your business grows.
+                Your Success is Our Mission
               </p>
               <p className="mt-5 text-lg text-gray-300">
-                So we really understand what it means for us to be involved as your business as it grows,
-                Our developers and Team mates are ready and willing to help deliver their best to make sure
-                as you have value for your investment.
+                We partner with businesses to deliver scalable, innovative technology solutions that drive growth.
+                Our expert team of developers is dedicated to understanding your unique needs and delivering
+                exceptional value that transforms your operations and accelerates your success.
               </p>
               <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
                 {metrics.map((item) => (

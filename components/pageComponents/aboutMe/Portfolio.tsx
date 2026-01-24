@@ -130,7 +130,7 @@ export default function Portfolio() {
 
                                 <Button
                                     className="group relative px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                                    onClick={() => window.open('/assets/images/aboutme/_resume.pdf', '_blank')}
+                                    onClick={() => window.open('/assets/images/aboutme/_resume_new.pdf', '_blank')}
                                     style={{
                                         background: theme === 'dark'
                                             ? 'linear-gradient(#1f2937, #1f2937) padding-box, linear-gradient(315deg, #3b82f6, #9333ea) border-box'

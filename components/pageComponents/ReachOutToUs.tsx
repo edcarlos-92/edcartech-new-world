@@ -9,8 +9,8 @@ export default function ReachOutToUs() {
           <span className="block">Kindly reach out to us</span>
         </h2>
         <p className="mt-4 text-lg leading-6 ">{/* text-indigo-200 */}
-          We're always available to start a conversation with you anytime you reach out. We promise to get back
-          to you as soon as we read your message(s)
+            We're always available to start a conversation with you anytime you reach out. We promise to get back 
+            to you as soon as we read your message
         </p>
         <a
           href="#"

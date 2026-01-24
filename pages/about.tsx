@@ -8,8 +8,8 @@ import PageHeading from '../components/PageHeading'
 import { themeConfig } from '../lib/themeConfig'
 
 const heroInfo = {
-  leftTitle: "Moving You Closer",
-  rightTitle: "To Technology",
+  leftTitle: "Innovative Solutions",
+  rightTitle: "For Your Business",
   Desc: "Edcartech"
 
 }

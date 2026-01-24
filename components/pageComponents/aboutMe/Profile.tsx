@@ -90,7 +90,7 @@ export default function Profile() {
 
                         {/* <div className=""> */}
                         <span className="">
-                          <h1>Pationate Computer Engineer 😎 </h1>
+                          <h1>Passionate Computer Engineer 😎 </h1>
                           {/* <h1> Full Stack Developer 💻 </h1> */}
                           {/* <h1> Experience MERN stack Dev 📱 </h1>
                                         <h1> Full Stack Developer 💻 </h1> */}
@@ -278,7 +278,7 @@ export default function Profile() {
           <div className="lg:text-center">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">About Me</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Why get me involve ?
+              Why get me involved?
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
               Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in

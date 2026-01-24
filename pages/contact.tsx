@@ -138,7 +138,7 @@ const footerNavigation = {
 const heroInfo = {
   leftTitle: "Get In Touch",
   rightTitle: "With Me",
-  Desc: "Kindly send me a query and i will get back to you as soon as possible"
+  Desc: "Kindly send me a query and I will get back to you as soon as possible"
 
 }
 
