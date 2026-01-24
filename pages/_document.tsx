@@ -145,15 +145,34 @@ export default class MyDocument extends Document {
                 }
                 
                 // Fix for returnfalse error - prevent default on anchor tags with href="#"
-                document.addEventListener('DOMContentLoaded', function() {
+                // Also define returnfalse as a no-op function to prevent errors
+                window.returnfalse = function() { return false; };
+                
+                // Prevent default on all anchor tags with href="#"
+                function preventHashAnchors() {
                   const anchors = document.querySelectorAll('a[href="#"]');
                   anchors.forEach(function(anchor) {
-                    anchor.addEventListener('click', function(e) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    });
+                    if (!anchor.hasAttribute('data-prevented')) {
+                      anchor.setAttribute('data-prevented', 'true');
+                      anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                      });
+                    }
                   });
-                });
+                }
+                
+                // Run immediately and on DOMContentLoaded
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', preventHashAnchors);
+                } else {
+                  preventHashAnchors();
+                }
+                
+                // Also run after a short delay to catch dynamically added elements
+                setTimeout(preventHashAnchors, 100);
+                setTimeout(preventHashAnchors, 500);
               }
             `
           }} />
