@@ -21,7 +21,7 @@ import SvgSearchIcon from '../icons/SearchIcons';
     <>
     <div className="flex justify-center items-center pt-8 ">
             {/* Centered using Tailwind Flex onSubmit={handleSearchFormSubmit}*/}
-        <form className="flex w-6/12" >
+        <form className="flex w-6/12" onSubmit={(e) => { e.preventDefault(); }}>
             <div className="block relative w-4/5 pr-5">
                     <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
                     <SearchIcon className="h-4 w-4 fill-current text-gray-500"/>

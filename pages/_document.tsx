@@ -124,7 +124,8 @@ export default class MyDocument extends Document {
                   if (typeof message === 'string' && 
                       (message.includes('service-worker-loader') || 
                        message.includes('Could not establish connection') ||
-                       message.includes('Receiving end does not exist'))) {
+                       message.includes('Receiving end does not exist') ||
+                       message.includes('returnfalse'))) {
                     return; // Suppress these errors
                   }
                   originalConsoleError.apply(console, args);
@@ -142,6 +143,17 @@ export default class MyDocument extends Document {
                     }
                   });
                 }
+                
+                // Fix for returnfalse error - prevent default on anchor tags with href="#"
+                document.addEventListener('DOMContentLoaded', function() {
+                  const anchors = document.querySelectorAll('a[href="#"]');
+                  anchors.forEach(function(anchor) {
+                    anchor.addEventListener('click', function(e) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    });
+                  });
+                });
               }
             `
           }} />

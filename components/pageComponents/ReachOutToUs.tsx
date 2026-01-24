@@ -13,7 +13,7 @@ export default function ReachOutToUs() {
             to you as soon as we read your message.
           </p>
           <a
-            href="#"
+            href="/contact"
             className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 sm:w-auto"
           >
             Contact Us

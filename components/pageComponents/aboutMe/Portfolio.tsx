@@ -102,7 +102,7 @@ export default function Portfolio() {
                         {/* <div className="text">I'm Carlos <span className="typing-2"></span></div> */}
                         <div className="text"><span className="typing-2"></span></div>
                         <p>Started coding back in 2010 while in school, pursuing a Bachelor of Science in Information and Communication Technology. Over the years, I have used various tech stacks including C++, VB.Net, PHP, C# & JavaScript. I have worked with different companies in Education, Security, FinTech, and Mining, where in most cases I built systems from scratch to support company protocols. I gained experience in building applications like School Management Systems, Hospital Management Systems, Savings and Loan Management Systems, Archive & Electronic Document Management Systems, Point of Sale systems, E-Commerce, and Web Applications. I am currently a Full Stack Developer specializing in JavaScript (Node/React/Next.js) and PHP (CodeIgniter & Laravel).</p>
-                        <a href="#">Download My CV</a>
+                        <a href="/assets/images/aboutme/_resume_.pdf" download="Carlos_Edorh_Resume.pdf">Download My CV</a>
                     </div>
                 </div>
             </div>
@@ -261,7 +261,7 @@ export default function Portfolio() {
                     </div>
                     <div className="column right">
                         <div className="text">Message me</div>
-                        <form action="#">
+                        <form onSubmit={(e) => { e.preventDefault(); }}>
                             <div className="fields">
                                 <div className="field name">
                                     <input type="text" placeholder="Name" required />

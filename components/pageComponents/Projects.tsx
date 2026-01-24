@@ -16,14 +16,28 @@ export default function Projects() {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  function openModal(src: string) {
+  function openModal(src: string, e?: React.MouseEvent) {
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
     setModalSrc(src)
     setIsModalOpen(true)
   }
 
-  function closeModal() {
+  function closeModal(e?: React.MouseEvent) {
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
     setIsModalOpen(false)
     setModalSrc(null)
+  }
+  
+  function handleImageClick(src: string, e: React.MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    openModal(src, e)
   }
   return (
     <div>
@@ -49,7 +63,7 @@ export default function Projects() {
             {/* <a href="https://revolutionpacks.com/crm/admin/authentication"> */}
             <li className="relative">
               <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-                <img onClick={() => openModal('/assets/images/projects/AMS.png')} src="/assets/images/projects/AMS.png" alt="" className="object-cover cursor-zoom-in projectImg" />
+                <img onClick={(e) => handleImageClick('/assets/images/projects/AMS.png', e)} src="/assets/images/projects/AMS.png" alt="" className="object-cover cursor-zoom-in projectImg" />
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">ARCHIVE MANAGEMENT SYSTEM</p>
               <p className="block text-xs font-small  pointer-events-none text-center">For managing document location</p>
@@ -640,9 +654,9 @@ export default function Projects() {
       {/* Modal */}
       {isModalOpen && (
         <div onClick={closeModal} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-          <button aria-label="Close" className="absolute top-4 right-4 text-white text-2xl" onClick={closeModal}>×</button>
+          <button aria-label="Close" className="absolute top-4 right-4 text-white text-2xl" onClick={(e) => { e.stopPropagation(); closeModal(); }}>×</button>
           {modalSrc && (
-            <img src={modalSrc} alt="preview" className="max-h-[85vh] max-w-[90vw] rounded shadow-lg" />
+            <img src={modalSrc} alt="preview" className="max-h-[85vh] max-w-[90vw] rounded shadow-lg" onClick={(e) => e.stopPropagation()} />
           )}
         </div>
       )}
