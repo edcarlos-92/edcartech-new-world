@@ -84,7 +84,7 @@ export default function MainMenu(props:any) {
               </div>
               <div className="hidden md:flex md:space-x-10 ">
                 {navigation.map((item) => (
-                  <a key={item.name} href={item.href} onClick={(e) => { if (item.href === '#') { e.preventDefault(); } }} className="font-medium ">{/* text-gray-500 hover:text-gray-900 */}
+                  <a key={item.name} href={item.href} className="font-medium ">{/* text-gray-500 hover:text-gray-900 */}
                     {item.name}
                   </a>
                 ))}
@@ -153,7 +153,7 @@ export default function MainMenu(props:any) {
                 </div>
                 <div className="px-2 pb-3">
                   {navigation.map((item) => (
-                    <a key={item.name} href={item.href} onClick={(e) => { if (item.href === '#') { e.preventDefault(); } }} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    <a key={item.name} href={item.href} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
                     </a>

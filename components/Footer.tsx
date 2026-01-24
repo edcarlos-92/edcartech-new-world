@@ -113,7 +113,7 @@ export default function Footer() {
               &copy; 2016-2022 by EDCARTECH All Rights Reserved
             </p>
           
-            <a  href="/privacy" onClick={(e) => { e.preventDefault(); }} className="mt-8 text-base  md:mt-0 md:order-1" >{/* text-gray-400 */}
+            <a  href="#" className="mt-8 text-base  md:mt-0 md:order-1" >{/* text-gray-400 */}
               Privacy & Policy
           </a>
 
