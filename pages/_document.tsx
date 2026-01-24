@@ -23,6 +23,9 @@ export default class MyDocument extends Document {
             __html: `
               // Block service workers and analytics early
               if (typeof window !== 'undefined') {
+                // Define returnfalse early to prevent ReferenceError
+                window.returnfalse = function() { return false; };
+                
                 // Block service worker registration
                 const originalRegister = navigator.serviceWorker?.register;
                 if (navigator.serviceWorker && originalRegister) {
@@ -86,6 +89,9 @@ export default class MyDocument extends Document {
             __html: `
               // Comprehensive service and analytics disabling
               if (typeof window !== 'undefined') {
+                // Define returnfalse to prevent ReferenceError
+                window.returnfalse = function() { return false; };
+                
                 // Disable Vercel Analytics
                 window.__VERCEL_ANALYTICS_DISABLED__ = true;
                 window.__NEXT_DATA__ = window.__NEXT_DATA__ || {};
