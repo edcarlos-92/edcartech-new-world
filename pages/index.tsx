@@ -5,8 +5,8 @@ import Landing from '../components/pageComponents/Landing'
 import PageHeading from '../components/PageHeading'
 
 const heroInfo = {
-    leftTitle:"Moving You Closer",
-    rightTitle:"To Technology",
+    leftTitle:"Innovative Solutions",
+    rightTitle:"For Your Business",
     Desc:"Edcartech"
   
   }

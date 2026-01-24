@@ -7,9 +7,9 @@ export const navigation = [
 
 
   export const BlogHeroInfo = {
-    leftTitle:"New Day To Learn ",
-    rightTitle:"Something New ",
-    Desc:"All made for you to always learn something new here"
+    leftTitle:"Tech Insights",
+    rightTitle:"& Best Practices",
+    Desc:"Stay ahead with the latest technology trends, tips, and industry insights"
   
   }
 

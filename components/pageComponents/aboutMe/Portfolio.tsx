@@ -44,7 +44,7 @@ export default function Portfolio() {
                                             <div className="home" id="home">
                                                 <div className="max-width">
                                                     <div className="home-content">
-                                                        <div className="">Pationate Computer Engineer 😎 </div>
+                                                        <div className="">Passionate Computer Engineer 😎 </div>
                                                         {/* <div className="text-2">Pationate Computer Engineer 😎 </div> */}
                                                         <div className="text-3">Experienced In <span className="typing"></span></div>
                                                         {/* <a href="/projects">Hire me</a>  <a href="#">Hire me</a> */}
@@ -101,7 +101,7 @@ export default function Portfolio() {
                     <div className="column right">
                         {/* <div className="text">I'm Carlos <span className="typing-2"></span></div> */}
                         <div className="text"><span className="typing-2"></span></div>
-                        <p>Started coding far back in 2010 whilst in school offering Bachelor of science in Information and Communication Technology. Over the years used various Tech Stacks in C++, VB.Net, PHP,C# & JavaScript. worked with different companies in Education , Security, FinTech and Mining where in most cases i built systems from scratch to support company protocols. i gained experience in building applications like School Management System, Hospital Management System, Saving and Loan Management, Archive & Electronic Document Management System, Point Of Sale, E-Commerce and Web Applications. Currently a FullStack Developer in JavaScript (Node/React/Next.js), PHP(CodeIgniter & Laravel).</p>
+                        <p>Started coding back in 2010 while in school, pursuing a Bachelor of Science in Information and Communication Technology. Over the years, I have used various tech stacks including C++, VB.Net, PHP, C# & JavaScript. I have worked with different companies in Education, Security, FinTech, and Mining, where in most cases I built systems from scratch to support company protocols. I gained experience in building applications like School Management Systems, Hospital Management Systems, Savings and Loan Management Systems, Archive & Electronic Document Management Systems, Point of Sale systems, E-Commerce, and Web Applications. I am currently a Full Stack Developer specializing in JavaScript (Node/React/Next.js) and PHP (CodeIgniter & Laravel).</p>
                         <a href="#">Download My CV</a>
                     </div>
                 </div>
@@ -117,14 +117,14 @@ export default function Portfolio() {
                         <div className="box">
                             <i className="fas fa-paint-brush"></i>
                             <div className="text">Web Design</div>
-                            <p>Web Design is no exeption when it comes to my experience in building dynamic websites for any type of company</p>
+                            <p>Web Design is no exception when it comes to my experience in building dynamic websites for any type of company</p>
                         </div>
                     </div>
                     <div className="card">
                         <div className="box">
                             <i className="fas fa-chart-line"></i>
                             <div className="text">IT training</div>
-                            <p>We train all kinds of professionals who whish to Learn IT or dive into programming to supplement their skill set.</p>
+                            <p>We train all kinds of professionals who wish to learn IT or dive into programming to supplement their skill set.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -144,8 +144,8 @@ export default function Portfolio() {
                 <h2 className="title">My skills</h2>
                 <div className="skills-content">
                     <div className="column left">
-                        <div className="text">My creative skills & experiences.</div>
-                        <p>After trying out a lot of technologies in different programming languages some fruitful and some not really in demand so they have been relegated. frameworks are just platforms to facilitate the use of these programming languages and i have interacted with quite a few of them and to mention like React,Redux for State Mnanagement, Context API, GraphQl, Building REST API with node and Managing databases like MySql, MongoDb, MSSQL, PostgreSql  i pride myself of doing what it takes to build a real world application in these various languages and how competent i feel about them.</p>
+                        <div className="text">My creative skills and experiences.</div>
+                        <p>After trying out many technologies in different programming languages—some fruitful and some not in demand, so they have been relegated—I understand that frameworks are platforms that facilitate the use of these programming languages. I have interacted with quite a few of them, such as React, Redux for State Management, Context API, GraphQL, Building REST APIs with Node, and managing databases like MySQL, MongoDB, MSSQL, and PostgreSQL. I pride myself on doing what it takes to build real-world applications in these various languages and feel competent about them.</p>
                         {/* <a href="#">Read more</a> */}
                     </div>
                     <div className="column right">
@@ -205,7 +205,7 @@ export default function Portfolio() {
                         <div className="box">
                             <img src="/assets/images/aboutme/profile-picture.png" alt="" />
                             <div className="text">Paul Atsu</div>
-                            <p>IT Project supervisor and Instructor. Expert in Stock Makets </p>
+                            <p>IT Project Supervisor and Instructor. Expert in Stock Markets </p>
                         </div>
                     </div>
                     <div className="card">
@@ -234,7 +234,7 @@ export default function Portfolio() {
                 <div className="contact-content">
                     <div className="column left">
                         <div className="text">Get in Touch</div>
-                        <p>Kindly reach out to me if interested in any of my qualities in this portfolio. am open to any form of scrutinization that will convince you of my skills and expertise to prove myself right</p>
+                        <p>Kindly reach out to me if interested in any of my qualities in this portfolio. I am open to any form of scrutiny that will convince you of my skills and expertise to prove myself right.</p>
                         <div className="icons">
                             <div className="row">
                                 <i className="fas fa-user"></i>

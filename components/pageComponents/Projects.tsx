@@ -88,7 +88,7 @@ export default function Projects() {
                 <img onClick={() => openModal('/assets/images/projects/EKBFOLDERMGM.png')} src="/assets/images/projects/EKBFOLDERMGM.png" alt="" className="object-cover cursor-zoom-in projectImg" />
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">FILE MANAGEMENT SYSTEM</p>
-              <p className="block text-xs font-small  pointer-events-none text-center">For managing and orginizing files & folders</p>
+              <p className="block text-xs font-small  pointer-events-none text-center">For managing and organizing files & folders</p>
             </li>
             {/* </a> */}
           </>
@@ -136,7 +136,7 @@ export default function Projects() {
                 <img onClick={() => openModal('/assets/images/projects/GRA.png')} src="/assets/images/projects/GRA.png" alt="" className="object-cover cursor-zoom-in projectImg" />
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">REVENUE AUDIT RECORDS & REPORTS</p>
-              <p className="block text-xs font-small  pointer-events-none text-center">For revenue autority agency</p>
+              <p className="block text-xs font-small  pointer-events-none text-center">For revenue authority agency</p>
             </li>
             {/* </a> */}
           </>
@@ -160,7 +160,7 @@ export default function Projects() {
                 <img onClick={() => openModal('/assets/images/projects/Safety-Performance.png')} src="/assets/images/projects/Safety-Performance.png" alt="" className="object-cover cursor-zoom-in projectImg" />
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">WEEKLY SAFETY PERFORMANCE DISPLAY</p>
-              <p className="block text-xs font-small  pointer-events-none text-center">For reception post large scrren display</p>
+              <p className="block text-xs font-small  pointer-events-none text-center">For reception post large screen display</p>
             </li>
             {/* </a> */}
           </>
@@ -208,7 +208,7 @@ export default function Projects() {
                 <img onClick={() => openModal('/assets/images/projects/SVL.png')} src="/assets/images/projects/SVL.png" alt="" className="object-cover cursor-zoom-in projectImg" />
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">SAVING & LOANS</p>
-              <p className="block text-xs font-small  pointer-events-none text-center">For managing past book & loan packages</p>
+              <p className="block text-xs font-small  pointer-events-none text-center">For managing passbook & loan packages</p>
             </li>
             {/* </a> */}
           </>
@@ -267,7 +267,7 @@ export default function Projects() {
               <img onClick={() => openModal('/assets/images/projects/MyEduAid.png')} src="/assets/images/projects/MyEduAid.png" alt="" className="object-cover cursor-zoom-in projectImg" />
             </div>
             <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">NGO WEBSITE</p>
-            <p className="block text-xs font-small  pointer-events-none text-center">For supporting less priviledged school going children </p>
+            <p className="block text-xs font-small  pointer-events-none text-center">For supporting less privileged school-going children </p>
           </li>
           {/* </a> */}
 
@@ -276,8 +276,8 @@ export default function Projects() {
             <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
               <img onClick={() => openModal('/assets/images/projects/afro-shoemaker.png')} src="/assets/images/projects/afro-shoemaker.png" alt="" className="object-cover cursor-zoom-in projectImg" />
             </div>
-            <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">E-CORMERCE WEBSITE</p>
-            <p className="block text-xs font-small  pointer-events-none text-center">For hand made local shoes, belts, setc... </p>
+            <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">E-COMMERCE WEBSITE</p>
+            <p className="block text-xs font-small  pointer-events-none text-center">For handmade local shoes, belts, etc... </p>
           </li>
           {/* </a> */}
 
@@ -320,7 +320,7 @@ export default function Projects() {
                 </button>
               </div>
               <p className="mt-2 block text-sm font-medium  truncate pointer-events-none text-center">PROFFISOFT</p>
-              <p className="block text-xs font-small  pointer-events-none text-center">Proffesional Office Software</p>
+              <p className="block text-xs font-small  pointer-events-none text-center">Professional Office Software</p>
             </li>
           </a>
 
